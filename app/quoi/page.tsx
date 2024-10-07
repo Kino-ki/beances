@@ -2,10 +2,11 @@
 
 import { getQuoiPage } from "@/sanity/utils/getquoipage";
 import { QuoiPageTypes } from "@/types/quoipageTypes";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function QuoiPage() {
-  const [quoiData, setQuoiData] = useState<QuoiPageTypes | null>(null);
+  const [quoiData, setQuoiData] = useState<QuoiPageTypes[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -13,7 +14,7 @@ export default function QuoiPage() {
     const fetchData = async () => {
       try {
         const data = await getQuoiPage();
-        setQuoiData(data[0]);
+        setQuoiData(data);
         setIsLoading(false);
       } catch {
         setError("Erreur de chargement de la page. Veuillez réessayer");
@@ -28,6 +29,13 @@ export default function QuoiPage() {
       {isLoading && <div>Chargement en cours ...</div>}
       {error && <div> {error} </div>}
       <div>PAGE QUOI</div>
+      {quoiData &&
+        quoiData.map((book) => (
+          <Link href={`/zines/${book.slug}/`} key={book._id}>
+            {" "}
+            {book.title}{" "}
+          </Link>
+        ))}
     </div>
   );
 }

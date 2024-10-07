@@ -1,5 +1,6 @@
+import { PortableTextBlock } from "next-sanity";
 
-export type QuoiPageTypes = {
+export type BookPageTypes = {
   _id: string;
   _createdAt: Date;
   title: string;
@@ -9,4 +10,6 @@ export type QuoiPageTypes = {
   year: string;
   bookimage: string;
   authorimage: string;
+  summary: PortableTextBlock[];
+  biography: PortableTextBlock[];
 };
