@@ -1,6 +1,7 @@
 "use client";
 import { getQuiPage } from "@/sanity/utils/getquipage";
 import { QuiPageTypes } from "@/types/quipageTypes";
+import { PortableText } from "next-sanity";
 import { useEffect, useState } from "react";
 
 export default function QuiPage() {
@@ -20,16 +21,22 @@ export default function QuiPage() {
       }
     };
     fetchData();
-  },[] );
-
+  }, []);
 
   console.log(quiData);
+  const { title, text } = quiData || {};
 
   return (
     <div>
       {isLoading && <div>Chargement en cours ...</div>}
       {error && <div> {error} </div>}
-      <div>PAGE QUI</div>
+      {quiData && (
+        <div className=" flex flex-col">
+          <h1 className="flex text-start font-burnout text-8xl my-32 text-pinku ml-32 tracking-wider">{title}</h1>
+          <p className="mx-28 mb-20 text-2xl font-sourcecode leading-loose text-pretty tracking-wide ">{text && <PortableText value={text} />}</p>
+        </div>
+      )}
+
     </div>
   );
 }

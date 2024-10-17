@@ -9,9 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        pinku: "#D16388",
+        violetta: "#B37EAE",
       },
+      backgroundImage: {
+        paperbg: "url(/images/paper.png)",
+        catalbg: "url(/images/catalbg.png)",
+      },
+    },
+    fontFamily: {
+      sourcecode: ["Source Code Pro"],
+      cyberpunk: ["cyberpunk"],
+      burnout: ["burnout"],
     },
   },
   plugins: [],
