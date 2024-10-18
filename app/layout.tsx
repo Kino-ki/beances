@@ -15,12 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-paperbg bg-cover `}>
-        <header>
+      <body
+        className={`antialiased bg-paperbg bg-cover font-sourcecode relative`}
+      >
+        <header className="absolute top-0 w-full  z-50 ">
           <NavBar />
         </header>
-        <main>{children}</main>
-        <footer>
+        <main className="absoltute">{children}</main>
+        <footer className="absolute bottom-0 w-full  z-50 ">
           <Footer />
         </footer>
       </body>

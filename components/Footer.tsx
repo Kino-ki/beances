@@ -9,7 +9,7 @@ export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <div className="sticky w-full bottom-0">
+    <div className=" backdrop-blur-sm">
       {!pathname.includes("admin") && (
         <div className="px-5 py-4 flex justify-between border-t border-t-1 border-black">
           <div className="flex flex-col justify-between">

@@ -9,7 +9,7 @@ export default function NavBar() {
   return (
     <div>
       {!pathname.includes("admin") && (
-        <div className="flex justify-between mx-8 ">
+        <div className="flex justify-between px-8 backdrop-blur-sm  ">
           <Image src={beancesPic} width={500} height={50} alt="navbar image" />
           <div className="font-cyberpunk flex flex-col justify-end">
             <ul className="flex justify-evenly gap-5 text-5xl text-gray-800">
@@ -20,7 +20,7 @@ export default function NavBar() {
                 <Link href="/quoi">QUOI?</Link>
               </li>
               <li className="hover:text-amber-400 transition-colors ease-in-out">
-                <Link href="/ou">OU?</Link>
+                <Link href="/ou">Où?</Link>
               </li>
               <li className="hover:text-amber-400 transition-colors ease-in-out">
                 <Link href="/allo">ALLO?</Link>

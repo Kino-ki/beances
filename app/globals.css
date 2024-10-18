@@ -20,6 +20,11 @@
     src: url("/fonts/Burnoutfadeaway.ttf");
   }
 
+  @font-face {
+    font-family: "gillbold";
+    src: url("/fonts/gillSansUltraBold.ttf");
+  }
+
 }
 
 html {

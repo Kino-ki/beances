@@ -11,16 +11,19 @@ const config: Config = {
       colors: {
         pinku: "#D16388",
         violetta: "#B37EAE",
+        gblue: "#4BA3A5",
       },
       backgroundImage: {
         paperbg: "url(/images/paper.png)",
         catalbg: "url(/images/catalbg.png)",
+        zinebg: "url(/images/zinebg.png)",
       },
     },
     fontFamily: {
       sourcecode: ["Source Code Pro"],
       cyberpunk: ["cyberpunk"],
       burnout: ["burnout"],
+      gillbold: ["gillbold"],
     },
   },
   plugins: [],

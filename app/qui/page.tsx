@@ -32,8 +32,8 @@ export default function QuiPage() {
       {error && <div> {error} </div>}
       {quiData && (
         <div className=" flex flex-col">
-          <h1 className="flex text-start font-burnout text-8xl my-32 text-pinku ml-32 tracking-wider">{title}</h1>
-          <p className="mx-28 mb-20 text-2xl font-sourcecode leading-loose text-pretty tracking-wide ">{text && <PortableText value={text} />}</p>
+          <h1 className="flex mt-44 text-start font-burnout text-8xl my-24 text-pinku ml-40 tracking-wider">{title}</h1>
+          <p className="mx-40 mb-60 text-2xl font-sourcecode leading-loose text-pretty tracking-wide ">{text && <PortableText value={text} />}</p>
         </div>
       )}
 
