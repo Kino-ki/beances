@@ -12,6 +12,7 @@ const config: Config = {
         pinku: "#D16388",
         violetta: "#B37EAE",
         gblue: "#4BA3A5",
+        jaune: "#FADE61",
       },
       backgroundImage: {
         paperbg: "url(/images/paper.png)",

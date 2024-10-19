@@ -39,15 +39,13 @@ export default function HomePage() {
 
   return (
     <div className=" flex flex-col justify-end">
-      {isLoading && <div>Chargement en cours ...</div>}
-      {error && <div> {error} </div>}
-      <div className="h-[75vh]">
-
-      </div>
+      <div className="h-[75vh] mt-20"></div>
       <div className="flex justify-center">
+        {isLoading && <div>Chargement en cours ...</div>}
+        {error && <div> {error} </div>}
         <Image src={triangle} width={60} height={10} alt="triangle" />
       </div>
-      <div className="mx-20 my-20 text-2xl font-sourcecode leading-10 text-pretty tracking-wide ">
+      <div className="mx-32 my-20 mb-40 text-2xl font-sourcecode leading-10 text-pretty tracking-wide ">
         {text && <PortableText value={text} components={components} />}
       </div>
     </div>

@@ -27,34 +27,34 @@ export default function QuoiPage() {
   }, []);
   console.log(quoiData);
   return (
-    <div className="flex flex-col">
-      <h1 className="flex text-start font-burnout text-8xl mt-44 mb-10 text-violetta ml-32 tracking-wider">
+    <div className="flex flex-col min-h-[100vh]">
+      <h1 className="flex text-start font-burnout text-8xl mt-44 mb-10 text-violetta ml-20 tracking-wider">
         CATALOGUE
       </h1>
       <div>
         {isLoading && <div>Chargement en cours ...</div>}
         {error && <div> {error} </div>}
-        <div className="bg-catalbg bg-fixed h-[100vh] shadow-lg m-20 mt-0 flex flex-col justify-center rounded-md ">
-          <div className="flex flex-row justify-evenly items-center px-10 h-full backdrop-contrast-75 backdrop-brightness-90">
+        <div className=" m-20 mt-0 flex flex-col justify-center rounded-md mb-40 ">
+          <div className="flex flex-row justify-evenly items-center px-10 h-full ">
             {quoiData &&
-              quoiData.map((book) => (
+              quoiData.toReversed().map((book) => (
                 <Link
                   href={`/zines/${book.slug}/`}
                   key={book._id}
-                  className="relative  overflow-hidden"
+                  className="relative overflow-hidden "
                   onMouseEnter={() => setHoveredBook(book._id)}
                   onMouseLeave={() => setHoveredBook(null)}
                 >
                   <Image
                     src={book.bookimage}
-                    width={250}
+                    width={200}
                     height={80}
                     alt={book.slug}
-                    className={` ${hoveredBook === book._id && `scale-110  transition-transform duration-500 ease-in-out`}`}
+                    className={` ${hoveredBook === book._id && `scale-105  transition-transform duration-500 ease-in-out`} `}
                   />{" "}
                   {hoveredBook === book._id && (
-                    <div className="absolute top-0 text-center h-full w-full text-slate-200 font-semibold flex flex-col justify-evenly px-2 transition-all ease-in-out backdrop-blur-[8px]">
-                      <h2 className="text-4xl font-gillbold">{book.title} </h2>
+                    <div className="absolute top-0 text-center h-full w-full text-slate-200 font-semibold flex flex-col justify-evenly px-3 backdrop-blur-[8px]">
+                      <h2 className="text-2xl font-gillbold">{book.title} </h2>
                       <h3 className="text-lg ">{book.author}</h3>
                     </div>
                   )}

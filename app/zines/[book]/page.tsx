@@ -43,21 +43,22 @@ export default function BookPage({ params }: Props) {
   } = bookData || {};
   return (
     <div className="bg-zinebg h-[120vh] w-full bg-fixed bg-cover">
+
+      <div className="flex flex-col justify-center">
       {isLoading && <div>Chargement en cours ...</div>}
       {error && <div> {error} </div>}
-      <div className="">
         {bookData && (
           <div className="flex justify-between  ">
-            <div className="flex flex-col justify-start mt-40 ml-24 gap-1 w-[50%]">
+            <div className="flex flex-col justify-start mt-40 ml-24 gap-2 w-[50%]">
               <h1 className="text-violetta font-burnout text-7xl   ">
                 {title} - <span className="text-5xl ">{author}</span>
               </h1>
-              <div className=" text-lg">({year}) </div>
-              <div className="text-lg">
+              <div className=" text-lg mt-2">({year}) </div>
+              <div className="text-lg tracking-tighter">
                 Traducteurice:{" "}
                 <span className="font-medium"> {translator} </span>{" "}
               </div>
-              <div className="overflow-hidden overflow-y-auto h-[50vh] flex flex-col justify-start gap-5 text-pretty">
+              <div className="overflow-hidden overflow-y-auto  no-scrollbar  h-[50vh] flex flex-col justify-start gap-5 text-pretty pt-2 shadow-inner">
                 <p className="underline">Résumé:</p>
                 {summary && (
                   <p>
@@ -71,6 +72,7 @@ export default function BookPage({ params }: Props) {
                     width={300}
                     height={30}
                     alt="author image"
+                    className="shadow-xl"
                   />
                 )}
                 {biography && (
@@ -80,7 +82,7 @@ export default function BookPage({ params }: Props) {
                 )}
               </div>
             </div>
-            <div className="flex flex-col gap-7 mr-40  my-auto">
+            <div className="flex flex-col gap-7 mr-40  my-auto mt-52">
               {bookimage && (
                 <Image
                   src={bookimage}

@@ -27,6 +27,22 @@
 
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    background-color: transparent;
+    width: 16px;
+    /* transition: background-color 2s ease-in-out; */
+  }
+
+
+
+  .no-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #CEADCD;
+    border-radius: 0.16rem;
+  }
+
+}
+
 html {
   scroll-behavior: smooth;
 }
