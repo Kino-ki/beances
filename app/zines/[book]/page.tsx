@@ -42,23 +42,33 @@ export default function BookPage({ params }: Props) {
     biography,
   } = bookData || {};
   return (
-    <div className="bg-zinebg h-[120vh] w-full bg-fixed bg-cover">
+    <div className=" md:h-[100vh]  bg-zinebg bg-contain md:bg-right-bottom bg-right-bottom bg-no-repeat  md:mr-20">
 
-      <div className="flex flex-col justify-center">
+      <div className="flex md:flex-col flex-row  justify-center">
       {isLoading && <div>Chargement en cours ...</div>}
       {error && <div> {error} </div>}
         {bookData && (
-          <div className="flex justify-between  ">
-            <div className="flex flex-col justify-start mt-40 ml-24 gap-2 w-[50%]">
-              <h1 className="text-violetta font-burnout text-7xl   ">
-                {title} - <span className="text-5xl ">{author}</span>
+          <div className="flex md:flex-row flex-col justify-between  ">
+            <div className="flex flex-col justify-start md:mt-40 md:ml-24 gap-2 md:w-[50%]">
+              <h1 className="font-burnout md:text-7xl  text-center md:text-start text-4xl  ">
+                {title} <p className="md:text-5xl ">{author}</p>
               </h1>
-              <div className=" text-lg mt-2">({year}) </div>
-              <div className="text-lg tracking-tighter">
+              <div className=" md:text-lg mt-2">({year}) </div>
+              <div className="md:text-lg tracking-tighter">
                 Traducteurice:{" "}
                 <span className="font-medium"> {translator} </span>{" "}
               </div>
-              <div className="overflow-hidden overflow-y-auto  no-scrollbar  h-[50vh] flex flex-col justify-start gap-5 text-pretty pt-2 shadow-inner">
+              <div className="flex justify-center md:hidden ">
+              {bookimage && (
+                <Image
+                  src={bookimage}
+                  width={150}
+                  height={10}
+                  alt="zine cover "
+                />
+              )}
+            </div>
+              <div className="overflow-hidden overflow-y-auto  no-scrollbar  h-[50vh] flex flex-col justify-start gap-5 text-pretty p-5 hover:shadow-inner transition-all ease-in-out delay-100">
                 <p className="underline">Résumé:</p>
                 {summary && (
                   <p>
@@ -82,13 +92,13 @@ export default function BookPage({ params }: Props) {
                 )}
               </div>
             </div>
-            <div className="flex flex-col gap-7 mr-40  my-auto mt-52">
+            <div className="md:flex md:flex-col justify-center m-64 hidden md:visible">
               {bookimage && (
                 <Image
                   src={bookimage}
                   width={250}
                   height={10}
-                  alt="zine cover"
+                  alt="zine cover "
                 />
               )}
             </div>

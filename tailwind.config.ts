@@ -12,12 +12,17 @@ const config: Config = {
         pinku: "#D16388",
         violetta: "#B37EAE",
         gblue: "#4BA3A5",
-        jaune: "#FADE61",
+        jaune: "#EAD05D",
       },
       backgroundImage: {
         paperbg: "url(/images/paper.png)",
         catalbg: "url(/images/catalbg.png)",
         zinebg: "url(/images/zinebg.png)",
+        oubg: "url(/images/bgou.png)",
+        ouoriginal: "url(/images/ou-original.png)",
+        allobg : "url(/images/bgallo.png)",
+        quibg : "url(/images/quibg.png)",
+        alu: "url(/images/alu.png) ",
       },
     },
     fontFamily: {

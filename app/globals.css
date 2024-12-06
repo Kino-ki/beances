@@ -30,14 +30,14 @@
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     background-color: transparent;
-    width: 16px;
+    width: 8px;
     /* transition: background-color 2s ease-in-out; */
   }
 
 
 
   .no-scrollbar:hover::-webkit-scrollbar-thumb {
-    background-color: #CEADCD;
+    background-color: #EAD05D;
     border-radius: 0.16rem;
   }
 

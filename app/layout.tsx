@@ -18,7 +18,7 @@ export default function RootLayout({
       <body
         className={`antialiased bg-paperbg bg-cover font-sourcecode relative no-scrollbar`}
       >
-        <header className="absolute top-0 w-full ">
+        <header className="absolute top-0 w-full z-50 ">
           <NavBar />
         </header>
         <main className="absoltute">{children}</main>

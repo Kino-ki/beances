@@ -27,13 +27,14 @@ export default function QuiPage() {
   const { title, text } = quiData || {};
 
   return (
-    <div>
-      {isLoading && <div>Chargement en cours ...</div>}
-      {error && <div> {error} </div>}
+    <div className="">
+      {isLoading && 
+      <div className="h-[100vh] flex flex-col justify-center text-center font-sourcecode text-xl ">Chargement en cours ...</div>}
+      {error && <div className="h-[100vh] flex flex-col justify-center text-center font-sourcecode text-xl "> {error} </div>}
       {quiData && (
-        <div className=" flex flex-col">
-          <h1 className="flex mt-44 text-start font-burnout text-8xl my-24 text-pinku ml-40 tracking-wider">{title}</h1>
-          <p className="mx-40 mb-60 text-2xl font-sourcecode leading-loose text-pretty tracking-wide ">{text && <PortableText value={text} />}</p>
+        <div className=" flex flex-col bg-paperbg">
+          <h1 className="flex md:mt-44 md:text-start font-burnout md:text-8xl text-7xl mx-auto md:my-24 my-12 text-pinku md:ml-40 tracking-wider">{title}</h1>
+          <p className="md:mx-40 mx-3 md:mb-60 mb-40 md:text-2xl text-xl font-sourcecode leading-loose text-pretty tracking-wide ">{text && <PortableText value={text} />}</p>
         </div>
       )}
 

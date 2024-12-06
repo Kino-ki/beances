@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import fblogo from "@/public/images/logofb.png";
 import instalogo from "@/public/images/logoinsta.png";
 import Image from "next/image";
+import background from "@/public/images/bgallo.png"
 
 export default function AlloPage() {
   const [alloData, setAlloData] = useState<AlloPageTypes | null>(null);
@@ -31,22 +32,25 @@ export default function AlloPage() {
 
   const { title, firsttext, secondtext } = alloData || {};
   return (
-    <div>
-      {isLoading && <div>Chargement en cours ...</div>}
-      {error && <div> {error} </div>}
-      <div className=" pt-40 pb-40 min-h-[100vh]">
+    <div className="md:bg-allobg md:bg-no-repeat md:bg-right md:mx-60 min-h-[100vh] ">
+      {isLoading && 
+      <div className=" flex flex-col-reverse text-center md:h-96 text-xl ">Chargement en cours ...</div>
+      
+      }
+      {error && <div className=" flex flex-col-reverse text-center md:h-96 text-xl "> {error} </div>}
+      <div className=" md:pt-40 md:pb-40 ">
         {alloData && (
           <div className="flex flex-col justify-start">
-            <h1 className="font-burnout text-[5.5rem] ml-20 text-gblue tracking-wider ">
+            <h1 className="font-burnout md:text-[5.5rem] text-7xl md:ml-20 md:text-start text-center my-12 md:my-0 text-gblue tracking-wider ">
               {title}
             </h1>
-            <div className="flex justify-between mt-12">
-              <div className="flex flex-col justify-start gap-10 md:w-[30%] ml-28">
+              <div className="flex flex-col md:justify-start text-center md:text-start md:mt-20 px-5 md:px-0  gap-10 md:w-[30%] md:ml-28 md:text-xl">
                 <p>{firsttext && <PortableText value={firsttext} />}</p>
-                <p className="underline hover:font-semibold transition-all ease-in-out duration-75">
+
+                <p className="underline hover:font-semibold transition-all ease-in-out duration-75 text-base md:text-lg">
                   beances.editions@protonmail.com
                 </p>
-                <div className="flex justify-start gap-16 ml-20">
+                <div className="flex justify-start gap-16 md:ml-20 mx-auto">
                   <Image
                     src={fblogo}
                     width={30}
@@ -69,7 +73,10 @@ export default function AlloPage() {
                   </span>{" "}
                 </p>
               </div>
-            </div>
+              <div className="md:hidden py-20 flex justify-center">
+
+                <Image src={background} alt="background allo" width={350} height={50} />
+              </div>
           </div>
         )}
       </div>

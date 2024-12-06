@@ -7,9 +7,9 @@ import Link from "next/link";
 export default function NavBar() {
   const pathname = usePathname();
   return (
-    <div>
+    <div className="z-50 ">
       {!pathname.includes("admin") && (
-        <div className="flex justify-between px-8 backdrop-blur-[2px] border-b border-black  ">
+        <div className=" hidden md:visible md:flex justify-between px-8 backdrop-blur-[2px] border-b border-black  ">
           <Link href="/">
             <Image
               src={beancesPic}

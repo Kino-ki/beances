@@ -1,0 +1,15 @@
+.mask {
+    mask-image: url('../public/images/mask.svg');
+    mask-repeat: no-repeat;
+    mask-position: 50%;
+    mask-size: 100px;
+    mask-border-mode: luminance;
+    height: 100%;
+    width: 100%;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

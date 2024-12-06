@@ -39,15 +39,19 @@ export default function HomePage() {
 
   return (
     <div className=" flex flex-col justify-end">
-      <div className="h-[75vh] mt-20"></div>
-      <div className="flex justify-center">
-        {isLoading && <div>Chargement en cours ...</div>}
-        {error && <div> {error} </div>}
+      <div className="h-[90vh] bg-quibg bg-center bg-contain bg-fixed bg-no-repeat mt-20">
+        {isLoading && 
+        <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl">Chargement en cours ...</div>}
+        {error && <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl"> {error} </div>}
+      </div>
+      {text &&<div>
+      <div className="flex justify-center -mt-24">
         <Image src={triangle} width={60} height={10} alt="triangle" />
       </div>
-      <div className="mx-32 my-20 mb-40 text-2xl font-sourcecode leading-10 text-pretty tracking-wide ">
-        {text && <PortableText value={text} components={components} />}
+      <div className="md:mx-32 mx-4 my-20 mb-40 md:text-2xl font-sourcecode leading-10 text-pretty tracking-wide ">
+         <PortableText value={text} components={components} />
       </div>
+      </div>}
     </div>
   );
 }
