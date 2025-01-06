@@ -5,9 +5,7 @@ import { useEffect, useState } from "react";
 import triangle from "../public/images/Polygon.png";
 import Image from "next/image";
 import { PortableText, PortableTextComponents } from "next-sanity";
-
 import "@/app/MaskStyles.css";
-
 import { motion as m } from "framer-motion";
 import useMousePosition from "@/components/useMousePosition";
 
@@ -49,10 +47,10 @@ export default function HomePage() {
   const text = homeData ? homeData.text : null;
 
   return (
-    <div className=" flex flex-col justify-end relative">
+    <div className=" flex flex-col justify-end">
       {/* Static Background  */}
 
-      <div className="h-[90vh] bg-quibg bg-center bg-contain bg-fixed bg-no-repeat mt-20">
+      <div className="h-[90vh] bg-quibg bg-center bg-contain bg-fixed bg-no-repeat -mt-16">
         {isLoading && 
         <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl">Chargement en cours ...</div>}
         {error && <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl"> {error} </div>}
@@ -61,7 +59,7 @@ export default function HomePage() {
       <div className="flex justify-center -mt-24 ">
         <Image src={triangle} width={60} height={10} alt="triangle" className="z-10" />
       </div>
-      <div className="md:mx-32 mx-4 my-20  md:text-2xl font-sourcecode leading-10 text-pretty tracking-wide ">
+      <div className="md:mx-32 mx-4 my-20 z-50 md:text-2xl font-sourcecode leading-10 text-pretty tracking-wide ">
          <PortableText value={text} components={components} />
       </div>
       </div>}
@@ -71,7 +69,7 @@ export default function HomePage() {
       {/* Spotlight Mask */}
       <div className="md:flex md:visible hidden ">
       <m.div
-        className="absolute z-0 top-0 left-0   bg-quioriginal bg-fixed bg-contain bg-center bg-no-repeat mask"
+        className="absolute z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed bg-contain bg-center bg-no-repeat mask"
         animate={{
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           opacity: 1,

@@ -36,8 +36,8 @@ export default function QuoiPage() {
   }, []);
   console.log(quoiData);
   return (
-    <div>
-    <div className="flex flex-col min-h-[88vh] bg-zinebg bg-fixed bg-right-bottom bg-contain bg-no-repeat ">
+    <div className="flex flex-col ">
+    <div className=" min-h-[90vh] bg-zinebg bg-fixed bg-right-bottom bg-contain bg-no-repeat ">
       <h1 className="flex md:text-start text-center mx-auto md:mix-blend-screen   font-burnout md:text-8xl text-[4rem] mt-12 md:my-0 md:mt-36 md:mb-10 text-violetta md:ml-20 tracking-wider">
         NOS LIVRES
       </h1>
@@ -77,9 +77,8 @@ export default function QuoiPage() {
       </div>
     </div>
     <div className="md:visible md:flex hidden">
-
     <m.div
-        className="absolute z-10 -ml-3 mt-2 right-14  bg-alu bg-right-bottom bg-no-repeat mask"
+        className="absolute z-10 bg-alu bg-fixed bg-contain bg-right-bottom bg-no-repeat mask"
         animate={{
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           opacity: 1,

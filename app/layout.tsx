@@ -20,7 +20,7 @@ export default function RootLayout({
         className={`antialiased bg-paperbg bg-fixed bg-cover font-sourcecode relative no-scrollbar`}
       >
         <Toaster position="top-center" />
-        <header className="absolute top-0 w-full z-50 ">
+        <header className=" sticky top-0 w-full z-50 ">
           <NavBar />
         </header>
         <main className="absoltute">{children}</main>

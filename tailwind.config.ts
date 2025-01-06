@@ -23,6 +23,7 @@ const config: Config = {
         allobg : "url(/images/bgallo.png)",
         quibg : "url(/images/quibg.png)",
         quioriginal: "url(/images/qui-original.png)",
+        allooriginal: "url(/images/allo-original.png)",
         alu: "url(/images/alu.png) ",
         zinegris: "url(/images/zinegris.png) ",
         clearbg: "url(/images/clearbg.png) ",
