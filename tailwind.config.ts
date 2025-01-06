@@ -22,7 +22,10 @@ const config: Config = {
         ouoriginal: "url(/images/ou-original.png)",
         allobg : "url(/images/bgallo.png)",
         quibg : "url(/images/quibg.png)",
+        quioriginal: "url(/images/qui-original.png)",
         alu: "url(/images/alu.png) ",
+        zinegris: "url(/images/zinegris.png) ",
+        clearbg: "url(/images/clearbg.png) ",
       },
     },
     fontFamily: {

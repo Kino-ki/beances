@@ -37,17 +37,17 @@ export default function QuoiPage() {
   console.log(quoiData);
   return (
     <div>
-    <div className="flex flex-col min-h-[100vh] bg-zinebg bg-fixed bg-right-bottom bg-contain bg-no-repeat ">
-      <h1 className="flex md:text-start text-center mx-auto font-burnout md:text-8xl text-[5rem] mt-20 md:my-0 md:mt-36 md:mb-10 text-violetta md:ml-20 tracking-wider">
-        CATALOGUE
+    <div className="flex flex-col min-h-[88vh] bg-zinebg bg-fixed bg-right-bottom bg-contain bg-no-repeat ">
+      <h1 className="flex md:text-start text-center mx-auto md:mix-blend-screen   font-burnout md:text-8xl text-[4rem] mt-12 md:my-0 md:mt-36 md:mb-10 text-violetta md:ml-20 tracking-wider">
+        NOS LIVRES
       </h1>
       <div>
         {isLoading && 
         <div className=" text-center text-xl font-sourcecode">Chargement en cours ...</div>
         }
         {error && <div className=" text-center text-xl font-sourcecode"> {error} </div>}
-        <div className=" m-20 mt-10 flex flex-col justify-center rounded-md mb-40 ">
-          <div className="flex md:flex-row flex-col gap-10 md:gap-0 md:h-96 justify-start items-center px-10 ">
+        <div className="  mt-10 flex flex-col justify-center rounded-md ">
+          <div className="flex md:flex-row flex-col gap-10 md:gap-0 md:h-96 justify-start items-center px-10 mb-10 ">
             {quoiData &&
               quoiData.toReversed().map((book) => (
                 <Link
@@ -65,8 +65,8 @@ export default function QuoiPage() {
                     alt={book.slug}
                     className={` ${hoveredBook === book._id && `scale-105  transition-transform duration-500 ease-in-out`} `}
                   />{" "}
-                    <div className={`flex flex-col md:mt-5 mb-5 text-center transition-opacity duration-300 ${hoveredBook === book._id ? "opacity-100" : "opacity-0"}`}>
-                      <h2 className="text-2xl font-gillbold">{book.title} </h2>
+                    <div className={`flex flex-col md:mt-5 mb-5 text-center transition-opacity duration-300 ${hoveredBook === book._id ? "md:opacity-100" : "md:opacity-0"}`}>
+                      <h2 className="text-xl font-gillbold">{book.title} </h2>
                       <h3 className="text-lg ">{book.author}</h3>
                     </div>
 
@@ -79,7 +79,7 @@ export default function QuoiPage() {
     <div className="md:visible md:flex hidden">
 
     <m.div
-        className="absolute z-10 top-0 right-14  bg-alu bg-right-bottom bg-no-repeat mask"
+        className="absolute z-10 -ml-3 mt-2 right-14  bg-alu bg-right-bottom bg-no-repeat mask"
         animate={{
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           opacity: 1,

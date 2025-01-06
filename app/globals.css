@@ -41,6 +41,10 @@
     border-radius: 0.16rem;
   }
 
+  .text-vertical {
+    writing-mode: vertical-rl;
+text-orientation: upright;
+  }
 }
 
 html {

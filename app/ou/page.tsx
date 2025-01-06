@@ -48,7 +48,7 @@ export default function OuPage() {
     <div className="relative">
 
       {/* Static Background */}
-      <div className="relative md:pt-40 pb-40 min-h-[100vh] md:bg-oubg md:bg-right-bottom md:bg-no-repeat ">
+      <div className="relative md:pt-40 pb-10  min-h-[88vh] md:bg-oubg  md:bg-right-bottom md:bg-no-repeat ">
       {isLoading && <div className=" md:mt-40 text-center text-xl font-sourcecode">Chargement en cours ...</div> }
         
         {error && <div className=" md:mt-40 text-center text-xl font-sourcecode"> {error} </div>}
@@ -58,7 +58,7 @@ export default function OuPage() {
               {name}
             </h1>
             <div className="flex  justify-between md:mt-12">
-              <div className="flex flex-col justify-start md:gap-10 gap-5 mx-8 md:w-[30%] md:ml-28">
+              <div className="flex flex-col justify-start text-center lg:text-start md:gap-10 gap-5 mx-8 md:w-[30%] md:ml-28">
                 <h2 className="font-cyberpunk md:text-lg">{paperdiffusion} </h2>
                 <p>
                   {paperdescription && (
@@ -83,9 +83,9 @@ export default function OuPage() {
       </div>
 
       {/* Spotlight Mask */}
-      <div className="md:flex md: visible hidden">
+      <div className="md:flex md:visible hidden">
       <m.div
-        className="absolute z-10 top-0 left-0 pt-40 pb-40 min-h-[100vh] bg-ouoriginal bg-right-bottom bg-no-repeat mask "
+        className="absolute z-0 top-0 -ml-1 mt-[0.7rem] min-h-[88vh] bg-ouoriginal bg-right-bottom bg-no-repeat mask "
         animate={{
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           opacity: 1,
