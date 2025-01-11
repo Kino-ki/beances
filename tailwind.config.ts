@@ -27,6 +27,7 @@ const config: Config = {
         alu: "url(/images/alu.png) ",
         zinegris: "url(/images/zinegris.png) ",
         clearbg: "url(/images/clearbg.png) ",
+        burgerbg: "url(/images/burger-bg.png) "
       },
     },
     fontFamily: {

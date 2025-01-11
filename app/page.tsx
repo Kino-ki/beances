@@ -24,12 +24,12 @@ export default function HomePage() {
   const [homeData, setHomeData] = useState<HomePageTypes | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-      const [isHovered, setIsHovered] = useState<boolean>(false);
-      const [isClicked, setIsClicked] = useState<boolean>(false);
-    
-      const { x, y } = useMousePosition();
-    
-      const size = isClicked ? 600 : isHovered ? 400 : 150;
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+
+  const { x, y } = useMousePosition();
+
+  const size = isClicked ? 600 : isHovered ? 400 : 150;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,41 +50,52 @@ export default function HomePage() {
     <div className=" flex flex-col justify-end">
       {/* Static Background  */}
 
-      <div className="h-[90vh] bg-quibg bg-center bg-contain bg-fixed bg-no-repeat -mt-16">
-        {isLoading && 
-        <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl">Chargement en cours ...</div>}
-        {error && <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl"> {error} </div>}
+      <div className="h-[95vh] md:h-[93vh] bg-quioriginal md:bg-quibg bg-center bg-contain bg-fixed bg-no-repeat -mt-16">
+        {isLoading && (
+          <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl">
+            Chargement en cours ...
+          </div>
+        )}
+        {error && (
+          <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl">
+            {" "}
+            {error}{" "}
+          </div>
+        )}
       </div>
-      {text &&<div>
-      <div className="flex justify-center -mt-24 ">
-        <Image src={triangle} width={60} height={10} alt="triangle" className="z-10" />
-      </div>
-      <div className="md:mx-32 mx-4 my-20 z-50 md:text-2xl font-sourcecode leading-10 text-pretty tracking-wide ">
-         <PortableText value={text} components={components} />
-      </div>
-      </div>}
-
-
+      {text && (
+        <div className="z-10 bg-paperbg md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] border-t border-pinku">
+          <div className="flex justify-center -mt-24  ">
+            <Image
+              src={triangle}
+              width={60}
+              height={10}
+              alt="triangle"
+              className="z-10"
+            />
+          </div>
+          <div className="md:mx-32 mx-4 my-20 md:text-2xl text-md font-sourcecode leading-7 text-pretty tracking-wide ">
+            <PortableText value={text} components={components} />
+          </div>
+        </div>
+      )}
 
       {/* Spotlight Mask */}
       <div className="md:flex md:visible hidden ">
-      <m.div
-        className="absolute z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed bg-contain bg-center bg-no-repeat mask"
-        animate={{
-          WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
-          opacity: 1,
-          WebkitMaskSize: `${size}px`,
-        }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onMouseDown={() => setIsClicked(true) }
-        onMouseUp={() => setIsClicked(false) }
-      >
-      </m.div>
-
+        <m.div
+          className="absolute z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed bg-contain bg-center bg-no-repeat mask"
+          animate={{
+            WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
+            opacity: 1,
+            WebkitMaskSize: `${size}px`,
+          }}
+          transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onMouseDown={() => setIsClicked(true)}
+          onMouseUp={() => setIsClicked(false)}
+        ></m.div>
       </div>
-
     </div>
   );
 }

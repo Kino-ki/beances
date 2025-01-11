@@ -42,7 +42,7 @@ export default function BookPage({ params }: Props) {
     biography,
   } = bookData || {};
   return (
-    <div className=" md:h-[100vh]  md:bg-zinegris bg-contain md:bg-right-bottom bg-clearbg bg-right-top md:bg-no-repeat  md:mr-20">
+    <div className=" md:h-[100vh]  md:bg-zinegris bg-contain md:bg-right-bottom bg-fixed bg-clearbg bg-right-top md:bg-no-repeat  md:mr-20">
 
       <div className="flex md:flex-col flex-row  justify-center">
       {isLoading && <div>Chargement en cours ...</div>}

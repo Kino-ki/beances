@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "../components/NavBar";
+import BurgerMenu from "../components/BurgerMenu";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Toaster position="top-center" />
         <header className=" sticky top-0 w-full z-50 ">
           <NavBar />
+          <BurgerMenu />
         </header>
         <main className="absoltute">{children}</main>
         <footer className=" ">
