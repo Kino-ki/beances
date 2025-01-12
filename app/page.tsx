@@ -8,6 +8,7 @@ import { PortableText, PortableTextComponents } from "next-sanity";
 import "@/app/MaskStyles.css";
 import { motion as m } from "framer-motion";
 import useMousePosition from "@/components/useMousePosition";
+import Link from "next/link";
 
 const components: PortableTextComponents = {
   marks: {
@@ -29,7 +30,7 @@ export default function HomePage() {
 
   const { x, y } = useMousePosition();
 
-  const size = isClicked ? 600 : isHovered ? 400 : 150;
+  const size = isClicked ? 600 : isHovered ? 400 : 10;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,16 +66,21 @@ export default function HomePage() {
       </div>
       {text && (
         <div className="z-10 bg-paperbg md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] border-t border-pinku">
-          <div className="flex justify-center -mt-24  ">
-            <Image
-              src={triangle}
-              width={60}
-              height={10}
-              alt="triangle"
-              className="z-10"
-            />
-          </div>
-          <div className="md:mx-32 mx-4 my-20 md:text-2xl text-md font-sourcecode leading-7 text-pretty tracking-wide ">
+          <Link href="#text">
+            <div className="flex justify-center -mt-24  ">
+              <Image
+                src={triangle}
+                width={60}
+                height={10}
+                alt="triangle"
+                className="z-10"
+              />
+            </div>
+          </Link>
+          <div
+            className="md:mx-32 mx-4 my-20 md:text-2xl text-md font-sourcecode leading-7 text-pretty tracking-wide "
+            id="text"
+          >
             <PortableText value={text} components={components} />
           </div>
         </div>

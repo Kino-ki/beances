@@ -20,7 +20,7 @@ export default function OuPage() {
 
   const { x, y } = useMousePosition();
 
-  const size = isClicked ? 600 : isHovered ? 400 : 150;
+  const size = isClicked ? 600 : isHovered ? 400 : 10;
 
   useEffect(() => {
     const fetchData = async () => {

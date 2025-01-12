@@ -3,8 +3,8 @@ export default function useMousePosition() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const updateMousePosition = (e) => {
-    setMousePosition({x:e.clientX, y:e.clientY +  window.scrollY })
-  }
+    setMousePosition({ x: e.clientX, y: e.clientY - 50 + window.scrollY });
+  };
 
   useEffect(() => {
     window.addEventListener("mousemove", updateMousePosition);

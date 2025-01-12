@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   @font-face {
     font-family: "Source Code Pro";
@@ -24,26 +22,23 @@
     font-family: "gillbold";
     src: url("/fonts/gillSansUltraBold.ttf");
   }
-
 }
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     background-color: transparent;
-    width: 8px;
+    width: 10px;
     /* transition: background-color 2s ease-in-out; */
   }
 
-
-
   .no-scrollbar:hover::-webkit-scrollbar-thumb {
-    background-color: #EAD05D;
+    background-color: #ead05d;
     border-radius: 0.16rem;
   }
 
   .text-vertical {
     writing-mode: vertical-rl;
-text-orientation: upright;
+    text-orientation: upright;
   }
 }
 

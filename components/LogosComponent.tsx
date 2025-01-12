@@ -38,7 +38,7 @@ export function LogosComponent() {
               width={150}
               height={100}
               alt={item.name}
-              className="object-contain"
+              className="object-contain pointer-events-none"
             />
           </div>
         ))}

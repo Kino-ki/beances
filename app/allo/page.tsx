@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 import "@/app/MaskStyles.css";
 import { motion as m } from "framer-motion";
 import useMousePosition from "@/components/useMousePosition";
+import Link from "next/link";
 
 const components: PortableTextComponents = {
   marks: {
@@ -87,13 +88,15 @@ export default function AlloPage() {
       {alloData && (
         <div className="flex flex-col justify-start h-full md:text-lg ">
           <div className="flex justify-center md:-mt-14  w-full mb-3 md:mb-8 z-10">
-            <Image
-              src={triangle}
-              width={60}
-              height={10}
-              alt="triangle"
-              className=""
-            />
+            <Link href="#text-content">
+              <Image
+                src={triangle}
+                width={60}
+                height={10}
+                alt="triangle"
+                className=""
+              />
+            </Link>
           </div>
           <div className="md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] pt-12 md:py-20 z-10 border-t border-gblue ">
             {title && (
@@ -117,6 +120,7 @@ export default function AlloPage() {
                       className="hover:scale-110 transition-all ease-in-out mx-auto"
                     />
                   </div>
+
                   <div className="my-auto">
                     <Image
                       src={instalogo}
@@ -128,7 +132,10 @@ export default function AlloPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col md:justify-start text-center lg:text-start gap-10 w-full lg:px-[10%] lg:border-x-2 lg:border-gblue ">
+              <div
+                className="flex flex-col md:justify-start text-center lg:text-start gap-10 w-full lg:px-[10%] lg:border-x-2 lg:border-gblue "
+                id="text-content"
+              >
                 <p>{firsttext && <PortableText value={firsttext} />}</p>
 
                 <p
