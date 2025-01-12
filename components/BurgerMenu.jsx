@@ -1,6 +1,6 @@
 "use client";
 import menulogo from "@/public/images/burgermenu.png";
-import blogo from "@/public/images/logo.png";
+import blogo from "@/public/images/logobe/logo.png";
 import cross from "@/public/images/cross.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,7 +29,7 @@ export default function BurgerMenu() {
           <Image
             src={menulogo}
             alt="burger menu"
-            width={90}
+            width={75}
             height={100}
             className=" pr-4 py-3 rounded-lg"
             onClick={() => setIsClicked(true)}

@@ -4,7 +4,7 @@ import diphtong from "@/public/images/diphtonglogo.png";
 import fblogo from "@/public/images/logofb.png";
 import instalogo from "@/public/images/logoinsta.png";
 import Image from "next/image";
-import mailImage from "@/public/images/mailicon.png"
+import mailImage from "@/public/images/mailicon.png";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -27,36 +27,48 @@ export default function Footer() {
         <div className="px-5 md:py-4 py-2 flex justify-between border-t md:border-t-1 md:border-black">
           <div className="flex flex-col md:justify-between justify-center">
             <div className="flex justify-start md:gap-10 gap-5">
-            <Image
-                src={mailImage}
-                width={30}
-                height={20}
-                alt="logo email"
-                className="hover:scale-110 transition-all ease-in-out visible md:hidden"
-              />
-              <Image
-                src={fblogo}
-                width={30}
-                height={20}
-                alt="logo facebook"
-                className="hover:scale-110 transition-all ease-in-out"
-              />
-              <Image
-                src={instalogo}
-                width={30}
-                height={20}
-                alt="logo instagram"
-                className="hover:scale-110 transition-all ease-in-out"
-              />
-
+              {!pathname.includes("allo") && (
+                <div className="flex justify-start md:gap-8 gap-[1.10rem] ">
+                  <div className="my-auto">
+                    <Image
+                      src={fblogo}
+                      width={35}
+                      height={30}
+                      alt="logo facebook"
+                      className="hover:scale-110 transition-all ease-in-out"
+                    />
+                  </div>
+                  <div className="my-auto">
+                    <Image
+                      src={instalogo}
+                      width={42}
+                      height={20}
+                      alt="logo instagram"
+                      className="hover:scale-110 transition-all ease-in-out"
+                    />
+                  </div>
+                </div>
+              )}
+              <div className="my-auto">
+                <Image
+                  src={mailImage}
+                  width={35}
+                  height={20}
+                  alt="logo email"
+                  className="hover:scale-110 transition-all ease-in-out visible md:hidden"
+                />
+              </div>
             </div>
-            <p onClick={ClipboardCopy} className="font-sourcecode hidden md:visible md:flex underline hover:font-semibold transition-all ease-in-out">
+            <p
+              onClick={ClipboardCopy}
+              className="font-sourcecode hidden md:visible md:flex underline hover:font-semibold transition-all ease-in-out"
+            >
               beances.editions@protonmail.com
             </p>
           </div>
           <div className="flex gap-4">
             <div className="font-sourcecode flex flex-col md:text-sm text-xs justify-center mb-0 text-end">
-              Copyright© <br/> 2024 <br/> BEANCES EDITIONS
+              Copyright© <br /> 2024 <br /> BEANCES EDITIONS
             </div>
             <Image src={diphtong} width={30} height={20} alt="logo diphtong" />
           </div>

@@ -2,7 +2,6 @@
 
 import { getLogos } from "@/sanity/utils/getlogos";
 import { LogosTypes } from "@/types/logosTypes";
-import { div } from "framer-motion/client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

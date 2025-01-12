@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import beancesPic from "../public/images/logo.png";
+import beancesPic from "../public/images/logobe/logo.png";
 import Link from "next/link";
 
 export default function NavBar() {

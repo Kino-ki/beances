@@ -24,18 +24,18 @@ const quiSchema = defineType({
       type: "array",
       of: [
         {
-           type: "block",
-           marks: {
+          type: "block",
+          marks: {
             decorators: [
               { title: "Bold", value: "strong" },
               { title: "Italic", value: "em" },
               { title: "Pink", value: "pink" },
               { title: "Purple", value: "purple" },
+              { title: "Blue", value: "blue" },
             ],
           },
-          
-        }
-          ],
+        },
+      ],
     },
   ],
 });

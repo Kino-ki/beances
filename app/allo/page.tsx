@@ -1,16 +1,34 @@
 "use client";
 import { getAlloPage } from "@/sanity/utils/getallopage";
 import { AlloPageTypes } from "@/types/allopageTypes";
-import { PortableText } from "next-sanity";
+import { PortableText, PortableTextComponents } from "next-sanity";
 import { useEffect, useState } from "react";
 import fblogo from "@/public/images/logofb.png";
 import instalogo from "@/public/images/logoinsta.png";
 import Image from "next/image";
 import triangle from "@/public/images/redpoly.png";
+import diphtong from "@/public/images/diphtonglogo.png";
 import toast from "react-hot-toast";
 import "@/app/MaskStyles.css";
 import { motion as m } from "framer-motion";
 import useMousePosition from "@/components/useMousePosition";
+
+const components: PortableTextComponents = {
+  marks: {
+    purple: ({ children }) => (
+      <span style={{ color: "rgba(209, 99, 136, 1)" }}>{children}</span>
+    ),
+    pink: ({ children }) => (
+      <span style={{ color: "rgba(233, 70, 124, 1)" }}>{children}</span>
+    ),
+    blue: ({ children }) => (
+      <span style={{ color: "#0000EE" }}>{children}</span>
+    ),
+    strong: ({ children }) => (
+      <span style={{ fontWeight: "bold" }}> {children} </span>
+    ),
+  },
+};
 
 export default function AlloPage() {
   const [alloData, setAlloData] = useState<AlloPageTypes | null>(null);
@@ -77,7 +95,7 @@ export default function AlloPage() {
               className=""
             />
           </div>
-          <div className="md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] py-12 md:py-20 z-10 border-t border-gblue ">
+          <div className="md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] pt-12 md:py-20 z-10 border-t border-gblue ">
             {title && (
               <div className=" flex flex-row lg:justify-start lg:mx-[5%]  lg:text-[5rem] text-6xl lg:pb-10">
                 <h1 className="font-burnout tracking-widest md:tracking-wider lg:w-auto text-center w-full md:my-0 text-gblue">
@@ -90,20 +108,24 @@ export default function AlloPage() {
               <div className="flex flex-col justify-evenly items-center gap-10  w-full ">
                 <p>Découvre nos réseaux !</p>
                 <div className="flex md:flex-col flex-row gap-10 ">
-                  <Image
-                    src={fblogo}
-                    width={40}
-                    height={10}
-                    alt="logo facebook"
-                    className="hover:scale-110 transition-all ease-in-out"
-                  />
-                  <Image
-                    src={instalogo}
-                    width={40}
-                    height={10}
-                    alt="logo instagram"
-                    className="hover:scale-110 transition-all ease-in-out"
-                  />
+                  <div className="my-auto">
+                    <Image
+                      src={fblogo}
+                      width={52}
+                      height={10}
+                      alt="logo facebook"
+                      className="hover:scale-110 transition-all ease-in-out mx-auto"
+                    />
+                  </div>
+                  <div className="my-auto">
+                    <Image
+                      src={instalogo}
+                      width={60}
+                      height={10}
+                      alt="logo instagram"
+                      className="hover:scale-110 transition-all ease-in-out"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col md:justify-start text-center lg:text-start gap-10 w-full lg:px-[10%] lg:border-x-2 lg:border-gblue ">
@@ -117,14 +139,24 @@ export default function AlloPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col text-center w-full ">
+              <div className="flex flex-col text-center w-full justify-evenly ">
                 <p>
-                  {secondtext && <PortableText value={secondtext} />}{" "}
-                  <span className="underline hover:font-semibold transition-all ease-in-out duration-75">
-                    ici
-                  </span>{" "}
+                  {secondtext && (
+                    <PortableText value={secondtext} components={components} />
+                  )}{" "}
                 </p>
-                {/* <p>Développé par Diphtong Studio</p> */}
+                <div className="flex justify-center mt-12">
+                  <p className="my-auto mt-2 mr-5 ">Développement web :</p>
+                  <div>
+                    <Image
+                      src={diphtong}
+                      width={30}
+                      height={30}
+                      alt="diphtong logo"
+                    />
+                  </div>
+                  <p className="mt-11 md:ml-2 ml-1 text-sm">studio</p>
+                </div>
               </div>
             </div>
           </div>

@@ -12,6 +12,12 @@ const components: PortableTextComponents = {
     pink: ({ children }) => (
       <span style={{ color: "rgba(233, 70, 124, 1)" }}>{children}</span>
     ),
+    blue: ({ children }) => (
+      <span style={{ color: "#0000EE" }}>{children}</span>
+    ),
+    strong: ({ children }) => (
+      <span style={{ fontWeight: "bold" }}> {children} </span>
+    ),
   },
 };
 
