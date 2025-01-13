@@ -7,18 +7,14 @@ import { useEffect, useState } from "react";
 
 export function LogosComponent() {
   const [logosData, setLogosData] = useState<LogosTypes[] | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getLogos();
         setLogosData(data);
-        setIsLoading(false);
-      } catch {
-        setError("Erreur de chargement, Veuillez rafraichir la page");
-        setIsLoading(false);
+      } catch (e) {
+        console.error(e);
       }
     };
     fetchData();
