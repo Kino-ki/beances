@@ -40,7 +40,6 @@ export default function QuiPage() {
     fetchData();
   }, []);
 
-  console.log(quiData);
   const { title, text } = quiData || {};
 
   return (

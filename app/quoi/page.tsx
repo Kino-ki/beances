@@ -34,7 +34,6 @@ export default function QuoiPage() {
     };
     fetchData();
   }, []);
-  console.log(quoiData);
   return (
     <div className="flex flex-col min-h-screen">
       <div className="  md:bg-zinebg md:bg-fixed md:bg-right-bottom bg-contain bg-fixed md:bg-no-repeat bg-clearbg bg-right-top">

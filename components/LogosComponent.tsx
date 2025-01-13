@@ -12,13 +12,18 @@ export function LogosComponent() {
     const fetchData = async () => {
       try {
         const data = await getLogos();
-        setLogosData(data);
+        if (Array.isArray(data)) {
+          setLogosData(data);
+        } else {
+          setLogosData([data]);
+        }
       } catch (e) {
         console.error(e);
       }
     };
     fetchData();
   }, []);
+
   console.log(logosData);
 
   return (
