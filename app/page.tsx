@@ -51,7 +51,7 @@ export default function HomePage() {
     <div className=" flex flex-col justify-end">
       {/* Static Background  */}
 
-      <div className="h-[95vh] md:h-[93vh] bg-quioriginal md:bg-quibg bg-center bg-contain lg:bg-fixed bg-no-repeat -mt-16">
+      <div className="h-[95vh] md:h-[93vh] bg-quioriginal lg:bg-quibg bg-center bg-contain lg:bg-auto bg-fixed bg-no-repeat -mt-16">
         {isLoading && (
           <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl">
             Chargement en cours ...
@@ -89,7 +89,7 @@ export default function HomePage() {
       {/* Spotlight Mask */}
       <div className="md:flex md:visible hidden ">
         <m.div
-          className="absolute z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed bg-contain bg-center bg-no-repeat mask"
+          className="absolute z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed lg:bg-auto bg-contain bg-center bg-no-repeat mask"
           animate={{
             WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
             opacity: 1,
