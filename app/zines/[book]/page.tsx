@@ -47,8 +47,8 @@ export default function BookPage({ params }: Props) {
         {isLoading && <div>Chargement en cours ...</div>}
         {error && <div> {error} </div>}
         {bookData && (
-          <div className="flex md:flex-row flex-col justify-between h-full   ">
-            <div className="flex flex-col justify-start mt-5 md:mt-10 md:ml-24 gap-5 md:w-[50%]">
+          <div className="flex lg:flex-row flex-col justify-between h-full   ">
+            <div className="flex flex-col justify-start mt-5 md:mt-10 md:ml-24 gap-5 lg:w-[50%]">
               <h1 className="font-burnout md:text-6xl  text-center md:text-start text-5xl  ">
                 {title}{" "}
                 <p className="md:text-3xl text-xl font-sourcecode ">{author}</p>
@@ -58,17 +58,18 @@ export default function BookPage({ params }: Props) {
                 Traducteurice:{" "}
                 <span className="font-medium "> {translator} </span>{" "}
               </div>
-              <div className="flex justify-center md:hidden ">
+              <div className="flex justify-center lg:hidden ">
                 {bookimage && (
                   <Image
                     src={bookimage}
-                    width={150}
+                    width={180}
                     height={10}
-                    alt="zine cover "
+                    alt="zine cover"
+                    className="md:w-60 md:my-5"
                   />
                 )}
               </div>
-              <div className=" hover:bg-paperbg overflow-hidden overflow-y-auto  no-scrollbar  md:h-[50vh] flex flex-col justify-start gap-5 text-pretty p-5 md:hover:shadow-inner transition-all ease-in-out delay-100">
+              <div className=" hover:bg-paperbg overflow-hidden overflow-y-auto  no-scrollbar  lg:h-[60vh] flex flex-col justify-start gap-5 text-pretty p-5 md:hover:shadow-inner transition-all ease-in-out delay-100">
                 <p className="underline">Résumé:</p>
                 {summary && (
                   <p>
@@ -92,7 +93,7 @@ export default function BookPage({ params }: Props) {
                 )}
               </div>
             </div>
-            <div className="md:flex md:flex-col  justify-center mx-auto hidden md:visible">
+            <div className="lg:flex lg:flex-col  justify-center mx-auto hidden lg:visible">
               {bookimage && (
                 <Image
                   src={bookimage}

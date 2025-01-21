@@ -36,7 +36,7 @@ export default function QuoiPage() {
   }, []);
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="  md:bg-zinebg md:bg-fixed md:bg-right-bottom bg-contain bg-fixed md:bg-no-repeat bg-clearbg bg-right-top">
+      <div className="  lg:bg-zinebg lg:bg-fixed lg:bg-right-bottom bg-contain bg-fixed lg:bg-no-repeat bg-clearbg bg-right-top">
         <h1 className="flex justify-center lg:justify-start font-burnout md:text-[5rem] text-center text-[4rem] mt-5 px-20 lg:px-0 leading-tight md:my-10 text-violetta md:ml-[5%] md:tracking-wider">
           NOS LIVRES
         </h1>
@@ -53,7 +53,7 @@ export default function QuoiPage() {
             </div>
           )}
           <div className="  mt-10 flex flex-col justify-center rounded-md">
-            <div className="flex lg:flex-row lg:flex-wrap flex-col lg:pt-10 lg:gap-[7rem] md:gap-12  gap-16 justify-start items-start px-10 mb-10 md:ml-[4%] ">
+            <div className="flex lg:flex-row lg:flex-wrap flex-col lg:pt-10 lg:gap-[7rem] md:gap-12  gap-16 justify-start lg:items-start px-10 mb-10 md:ml-[4%] ">
               {quoiData &&
                 quoiData.toReversed().map((book) => (
                   <Link
@@ -84,7 +84,7 @@ export default function QuoiPage() {
           </div>
         </div>
       </div>
-      <div className="md:visible md:flex hidden">
+      <div className="lg:visible lg:flex hidden">
         <m.div
           className="absolute z- bg-alu bg-fixed bg-contain bg-right-bottom bg-no-repeat mask"
           animate={{
