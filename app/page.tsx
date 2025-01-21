@@ -51,7 +51,7 @@ export default function HomePage() {
     <div className=" flex flex-col justify-end">
       {/* Static Background  */}
 
-      <div className="h-[95vh] md:h-[93vh] bg-quioriginal md:bg-quibg bg-center bg-contain bg-fixed bg-no-repeat -mt-16">
+      <div className="h-[95vh] md:h-[93vh] bg-quioriginal md:bg-quibg bg-center bg-contain lg:bg-fixed bg-no-repeat -mt-16">
         {isLoading && (
           <div className="flex flex-col text-center h-[60%] justify-center my-auto font-sourcecode text-xl">
             Chargement en cours ...

@@ -12,7 +12,7 @@ export default function BurgerMenu() {
     setIsClicked(false);
   };
   return (
-    <div className="md:hidden flex justify-between backdrop-blur-[2px] ">
+    <div className="lg:hidden flex justify-between backdrop-blur-[2px] ">
       <div className="my-auto">
         <Link href="/">
           <Image
@@ -20,7 +20,7 @@ export default function BurgerMenu() {
             width={150}
             height={100}
             alt="béances logo"
-            className="pl-4 py-3"
+            className="pl-4 py-3  md:w-52 "
           />
         </Link>
       </div>
@@ -31,7 +31,7 @@ export default function BurgerMenu() {
             alt="burger menu"
             width={75}
             height={100}
-            className=" pr-4 py-3 rounded-lg"
+            className=" pr-4 py-3 rounded-lg md:w-28"
             onClick={() => setIsClicked(true)}
           />
         </div>
