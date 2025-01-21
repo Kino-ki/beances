@@ -6,7 +6,6 @@ import { PortableText } from "next-sanity";
 import { useEffect, useState } from "react";
 import "@/app/MaskStyles.css";
 import useMousePosition from "@/components/useMousePosition";
-import { LogosComponent } from "@/components/LogosComponent";
 import { motion as m } from "framer-motion";
 import background from "@/public/images/ou-original.png";
 import Image from "next/image";
@@ -47,7 +46,7 @@ export default function OuPage() {
   return (
     <div className="relative">
       {/* Static Background */}
-      <div className="relative md:pt-20 pb-10  min-h-[88vh] md:bg-oubg  md:bg-right md:bg-no-repeat ">
+      <div className=" md:pt-20 pb-10  min-h-[80vh] ">
         {isLoading && (
           <div className=" md:mt-40 text-center text-xl font-sourcecode">
             Chargement en cours ...
@@ -61,14 +60,15 @@ export default function OuPage() {
           </div>
         )}
         {ouData && (
-          <div className="flex flex-col md:justify-start justify-center text-center md:text-start">
-            <h1 className="font-burnout md:text-[5rem] text-[3rem] leading-tight my-5 px-10 md:ml-20 text-jaune tracking-wide mx-auto md:my-0 ">
-              {name}
-            </h1>
-            <div className="flex flex-col md:flex-row md:justify-between md:mt-12 ">
-              <div className="flex flex-col justify-start text-center lg:text-start md:gap-10 gap-5 mx-8 md:w-[30%] md:ml-28">
+          <div className="flex flex-col lg:flex-row lg:justify-between ">
+            <div className="flex flex-col lg:justify-start justify-center text-center lg:text-start md:mx-auto md:gap-12 ">
+              <h1 className="font-burnout md:text-[4rem] text-[3rem] leading-tight my-5 lg:ml-20 text-jaune tracking-wide mx-auto  md:my-0 ">
+                {name}
+              </h1>
+
+              <div className="flex flex-col justify-start text-center lg:text-start md:gap-10 gap-5 mx-8  lg:ml-28 lg:w-[35vw]">
                 <h2 className="font-cyberpunk md:text-lg">{paperdiffusion} </h2>
-                <p>
+                <p className="text-md">
                   {paperdescription && (
                     <PortableText value={paperdescription} />
                   )}
@@ -78,36 +78,37 @@ export default function OuPage() {
                   width={350}
                   height={50}
                   alt="background"
-                  className="items-center visible md:hidden"
+                  className="items-center mx-auto visible md:hidden"
                 />
-                <h2 className="font-cyberpunk ms:text-lg"> {webdiffusion} </h2>
-                <p>
+                <h2 className="font-cyberpunk md:text-lg"> {webdiffusion} </h2>
+                <p className="text-md">
                   {webdescription && <PortableText value={webdescription} />}
                 </p>
               </div>
-              <div className=" mx-auto z-10 lg:h-[50vh] hover:md:shadow-inner transition-all ease-in-out duration-200 lg:-mt-10 mt-10 no-scrollbar overflow-y-auto">
-                <LogosComponent />
+            </div>
+            <div className="relative md:h-[50vh] lg:h-[60vh] w-full ">
+              <div className=" lg:bg-oubg md:bg-ouoriginal h-full w-full bg-contain lg:my-auto  md:bg-center md:bg-no-repeat">
+                {" "}
+              </div>
+              {/* Spotlight Mask */}
+              <div className="md:flex justify-between md:visible hidden w-full ">
+                <m.div
+                  className="absolute z-0 top-0 left-1 bg-contain bg-ouoriginal bg-center my-auto bg-no-repeat mask  "
+                  animate={{
+                    WebkitMaskPosition: `${x - 2.5 * size}px ${y - size / 1.5}px`,
+                    opacity: 1,
+                    WebkitMaskSize: `${size}px`,
+                  }}
+                  transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  onMouseDown={() => setIsClicked(true)}
+                  onMouseUp={() => setIsClicked(false)}
+                ></m.div>
               </div>
             </div>
           </div>
         )}
-      </div>
-
-      {/* Spotlight Mask */}
-      <div className="md:flex md:visible hidden">
-        <m.div
-          className="absolute z-0 top-0 -ml-1 mt-[0.7rem] min-h-[88vh] bg-ouoriginal bg-right bg-no-repeat mask "
-          animate={{
-            WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
-            opacity: 1,
-            WebkitMaskSize: `${size}px`,
-          }}
-          transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onMouseDown={() => setIsClicked(true)}
-          onMouseUp={() => setIsClicked(false)}
-        ></m.div>
       </div>
     </div>
   );

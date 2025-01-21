@@ -64,7 +64,7 @@ export default function BurgerMenu() {
                   className={`transition-colors ease-in-out `}
                   onClick={handleClick}
                 >
-                  <Link href="/allo">ALLO?</Link>
+                  <Link href="/allo">ALLÔ?</Link>
                 </li>
               </ul>
             </div>

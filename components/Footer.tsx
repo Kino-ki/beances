@@ -70,7 +70,14 @@ export default function Footer() {
             <div className="font-sourcecode flex flex-col md:text-sm text-xs justify-center mb-0 text-end">
               Copyright© <br /> 2024 <br /> BEANCES EDITIONS
             </div>
-            <Image src={diphtong} width={30} height={20} alt="logo diphtong" />
+            {!pathname.includes("allo") && (
+              <Image
+                src={diphtong}
+                width={30}
+                height={20}
+                alt="logo diphtong"
+              />
+            )}
           </div>
         </div>
       )}

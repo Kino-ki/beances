@@ -21,24 +21,24 @@ export default function NavBar() {
           <div className="font-cyberpunk flex flex-col justify-center">
             <ul className="flex justify-evenly gap-5 text-5xl text-gray-800">
               <li
-                className={`transition-colors ease-in-out ${pathname.includes("quoi") ? "hover:text-violetta" : pathname.includes("ou") ? "hover:text-jaune" : pathname.includes("allo") ? "hover:text-gblue" : "hover:text-pinku"}`}
+                className={`transition-colors ease-in-out ${pathname.includes("quoi") ? "hover:text-[#8f648b]" : pathname.includes("ou") ? "hover:text-[#d2bb53]" : pathname.includes("allo") ? "hover:text-[#2d6163]" : "hover:text-[#a74f6c]"}`}
               >
                 <Link href="/qui">QUI?</Link>
               </li>
               <li
-                className={`transition-colors ease-in-out ${pathname.includes("qui") ? "hover:text-pinku" : pathname.includes("ou") ? "hover:text-jaune" : pathname.includes("allo") ? "hover:text-gblue" : "hover:text-violetta"}`}
+                className={`transition-colors ease-in-out ${pathname.includes("qui") ? "hover:text-[#a74f6c]" : pathname.includes("ou") ? "hover:text-[#d2bb53]" : pathname.includes("allo") ? "hover:text-[#2d6163]" : "hover:text-[#8f648b]"}`}
               >
                 <Link href="/quoi">QUOI?</Link>
               </li>
               <li
-                className={`transition-colors ease-in-out ${pathname.includes("qui") ? "hover:text-pinku" : pathname.includes("quoi") ? "hover:text-violetta" : pathname.includes("allo") ? "hover:text-gblue" : "hover:text-jaune"}`}
+                className={`transition-colors ease-in-out ${pathname.includes("qui") ? "hover:text-[#a74f6c]" : pathname.includes("quoi") ? "hover:text-[#8f648b]" : pathname.includes("allo") ? "hover:text-[#2d6163]" : "hover:text-[#d2bb53] "}`}
               >
                 <Link href="/ou">Où?</Link>
               </li>
               <li
-                className={`transition-colors ease-in-out ${pathname.includes("qui") ? "hover:text-pinku" : pathname.includes("quoi") ? "hover:text-violetta" : pathname.includes("ou") ? "hover:text-jaune" : "hover:text-gblue"}`}
+                className={`transition-colors ease-in-out ${pathname.includes("qui") ? "hover:text-[#a74f6c]" : pathname.includes("quoi") ? "hover:text-[#8f648b]" : pathname.includes("ou") ? "hover:text-[#d2bb53]" : "hover:text-[#2d6163]"}`}
               >
-                <Link href="/allo">ALLO?</Link>
+                <Link href="/allo">ALLÔ?</Link>
               </li>
             </ul>
           </div>

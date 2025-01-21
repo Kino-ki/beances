@@ -140,7 +140,7 @@ export default function AlloPage() {
 
                 <p
                   onClick={ClipboardCopy}
-                  className="underline hover:font-bold font-semibold transition-all ease-in-out duration-75 text-base md:text-xl cursor-pointer"
+                  className="underline hover:font-bold font-semibold transition-all -mx-10 md:-mx-0 ease-in-out duration-75 text-base md:text-xl cursor-pointer"
                 >
                   beances.editions@protonmail.com
                 </p>
@@ -153,7 +153,7 @@ export default function AlloPage() {
                   )}{" "}
                 </p>
                 <div className="flex justify-center mt-12">
-                  <p className="my-auto mt-2 mr-5 ">Développement web :</p>
+                  <p className="my-auto mt-2 mr-2 ">Développement web</p>
                   <div>
                     <Image
                       src={diphtong}

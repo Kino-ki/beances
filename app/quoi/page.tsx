@@ -52,28 +52,28 @@ export default function QuoiPage() {
               {error}{" "}
             </div>
           )}
-          <div className="  mt-10 flex flex-col justify-center rounded-md ">
-            <div className="flex lg:flex-row lg:flex-wrap flex-col lg:pt-10 lg:gap-[7rem] md:gap-12  gap-16 justify-start items-center px-10 mb-10 md:ml-[4%] ">
+          <div className="  mt-10 flex flex-col justify-center rounded-md">
+            <div className="flex lg:flex-row lg:flex-wrap flex-col lg:pt-10 lg:gap-[7rem] md:gap-12  gap-16 justify-start items-start px-10 mb-10 md:ml-[4%] ">
               {quoiData &&
                 quoiData.toReversed().map((book) => (
                   <Link
                     href={`/zines/${book.slug}/`}
                     key={book._id}
-                    className="relative overflow-hidden z-20 flex lg:flex-col lg:justify-start flex-col-reverse items-center lg:h-[55vh]  "
+                    className="relative z-20 flex lg:flex-col lg:justify-start flex-col-reverse items-center gap-1 lg:min-h-[60vh]  "
                     onMouseEnter={() => setHoveredBook(book._id)}
                     onMouseLeave={() => setHoveredBook(null)}
                   >
-                    <Image
-                      src={book.bookimage}
-                      width={200}
-                      height={80}
-                      alt={book.slug}
-                      className={` ${hoveredBook === book._id && `scale-105 transition-transform duration-500 ease-in-out`} shadow-xl w-auto `}
-                    />{" "}
-                    <div
-                      className={`flex flex-col md:mt-5 mb-3 text-center transition-opacity duration-300 ${hoveredBook === book._id ? "lg:opacity-100" : "lg:opacity-0"}`}
-                    >
-                      <h2 className="text-lg md:text-xl font-gillbold md:w-[15rem]">
+                    <div className="overflow-hidden h-full">
+                      <Image
+                        src={book.bookimage}
+                        width={200}
+                        height={80}
+                        alt={book.slug}
+                        className={` ${hoveredBook === book._id && `scale-105 transition-transform duration-500 ease-in-out`} shadow-xl w-auto `}
+                      />{" "}
+                    </div>
+                    <div className="flex flex-col md:mt-5 mb-3 text-center  md:w-[15rem]">
+                      <h2 className=" flex justify-center text-lg md:text-xl font-gillbold ">
                         {book.title}{" "}
                       </h2>
                       <h3 className="text-md md:text-lg ">{book.author}</h3>
