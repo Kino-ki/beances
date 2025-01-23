@@ -36,7 +36,7 @@ export default function QuoiPage() {
   }, []);
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="  lg:bg-zinebg lg:bg-fixed lg:bg-right-bottom bg-contain bg-fixed lg:bg-no-repeat bg-clearbg bg-right-top">
+      <div className="  compt:bg-zinebg lg:bg-fixed compt:bg-right-bottom bg-contain bg-fixed compt:bg-no-repeat bg-clearbg bg-right-top">
         <h1 className="flex justify-center lg:justify-start font-burnout md:text-[5rem] text-center text-[4rem] mt-5 px-20 lg:px-0 leading-tight md:my-10 text-violetta md:ml-[5%] md:tracking-wider">
           NOS LIVRES
         </h1>
@@ -69,7 +69,7 @@ export default function QuoiPage() {
                         width={200}
                         height={80}
                         alt={book.slug}
-                        className={` ${hoveredBook === book._id && `scale-105 transition-transform duration-500 ease-in-out`} shadow-xl w-auto `}
+                        className={` ${hoveredBook === book._id && `scale-105 transition-transform duration-500 ease-in-out`} shadow-xl w-auto md:w-64  `}
                       />{" "}
                     </div>
                     <div className="flex flex-col md:mt-5 mb-3 text-center  md:w-[15rem]">

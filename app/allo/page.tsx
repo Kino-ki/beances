@@ -40,7 +40,7 @@ export default function AlloPage() {
 
   const { x, y } = useMousePosition();
 
-  const size = isClicked ? 600 : isHovered ? 400 : 150;
+  const size = isClicked ? 600 : isHovered ? 400 : 0;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,7 +72,7 @@ export default function AlloPage() {
 
   return (
     <div className="flex flex-col justify-end relative ">
-      <div className="lg:bg-auto bg-contain bg-no-repeat md:bg-allobg bg-allooriginal lg:-mt-20  mr-8 lg:mr-20 h-[75vh] md:h-[90vh]  bg-center">
+      <div className="lg:bg-auto md:bg-[60px_60px] bg-repeat md:bg-repeat bg-[200px_10px] bg-auto md:bg-allobg bg-allooriginal -mt-20  h-[95vh] md:h-[95vh] ">
         {isLoading && (
           <div className="flex flex-col-reverse text-center md:h-96 text-xl">
             Chargement en cours ...
@@ -86,8 +86,8 @@ export default function AlloPage() {
       </div>
 
       {alloData && (
-        <div className="flex flex-col justify-start h-full md:text-lg ">
-          <div className="flex justify-center md:-mt-14  w-full mb-3 md:mb-8 z-10">
+        <div className="flex flex-col relative justify-start h-full md:text-lg ">
+          <div className="absolute -top-24 left-[45%] md:left-[50%]  mb-3 md:mb-8 z-10">
             <Link href="#text-content">
               <Image
                 src={triangle}
@@ -173,7 +173,7 @@ export default function AlloPage() {
 
       <div className="md:flex justify-center md:visible hidden ">
         <m.div
-          className="absolute z-0 bg-allooriginal bg-auto bg-top -mt-[3.1rem] -ml-10 bg-no-repeat mask"
+          className="absolute z-0 bg-allooriginal  lg:-mt-20  lg:bg-auto bg-[60px_60px] mask"
           animate={{
             WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
             opacity: 1,

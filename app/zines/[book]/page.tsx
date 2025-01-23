@@ -42,16 +42,16 @@ export default function BookPage({ params }: Props) {
     biography,
   } = bookData || {};
   return (
-    <div className=" md:min-h-[90vh]  md:bg-zinegris bg-contain md:bg-right-bottom bg-fixed bg-clearbg bg-right-top md:bg-no-repeat pb-3 md:pb-0  md:mr-20">
+    <div className=" md:min-h-[90vh]  compt:bg-zinegris bg-contain md:bg-right-bottom bg-fixed bg-clearbg bg-right-top md:bg-no-repeat pb-3 md:pb-0  md:mr-20">
       <div className="flex md:flex-col flex-row  justify-center">
         {isLoading && <div>Chargement en cours ...</div>}
         {error && <div> {error} </div>}
         {bookData && (
           <div className="flex lg:flex-row flex-col justify-between h-full   ">
-            <div className="flex flex-col justify-start mt-5 md:mt-10 md:ml-24 gap-5 lg:w-[50%]">
+            <div className="flex flex-col justify-start mt-5 md:mt-10 md:ml-24 gap-5 mb-5 lg:w-[50%]">
               <h1 className="font-burnout md:text-6xl  text-center md:text-start text-5xl  ">
                 {title}{" "}
-                <p className="md:text-3xl text-xl font-sourcecode ">{author}</p>
+                <p className="md:text-2xl text-xl font-sourcecode ">{author}</p>
               </h1>
               <div className=" md:text-lg mt-2 px-3 md:px-0">({year}) </div>
               <div className="md:text-lg tracking-tighter px-3 md:px-0">
@@ -69,7 +69,7 @@ export default function BookPage({ params }: Props) {
                   />
                 )}
               </div>
-              <div className=" hover:bg-paperbg overflow-hidden overflow-y-auto  no-scrollbar  lg:h-[60vh] flex flex-col justify-start gap-5 text-pretty p-5 md:hover:shadow-inner transition-all ease-in-out delay-100">
+              <div className=" hover:bg-paperbg overflow-hidden overflow-y-auto  no-scrollbar lg:h-[60vh] flex flex-col justify-start gap-5 text-pretty p-5 md:hover:shadow-inner transition-all ease-in-out delay-100">
                 <p className="underline">Résumé:</p>
                 {summary && (
                   <p>

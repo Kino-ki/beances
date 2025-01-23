@@ -91,7 +91,7 @@ export default function OuPage() {
                 {" "}
               </div>
               {/* Spotlight Mask */}
-              <div className="md:flex justify-between md:visible hidden w-full ">
+              <div className="compt:flex justify-between compt:visible hidden w-full ">
                 <m.div
                   className="absolute z-0 top-0 left-1 bg-contain bg-ouoriginal bg-center my-auto bg-no-repeat mask  "
                   animate={{
