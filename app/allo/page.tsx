@@ -72,7 +72,7 @@ export default function AlloPage() {
 
   return (
     <div className="flex flex-col justify-end relative ">
-      <div className="lg:bg-auto md:bg-[60px_60px] bg-repeat md:bg-repeat bg-[200px_10px] bg-auto md:bg-allobg bg-allooriginal -mt-20  h-[95vh] md:h-[95vh] ">
+      <div className="lg:bg-auto compt:bg-[60px_60px] lg:bg-[10px_10px] bg-repeat md:bg-repeat bg-[20px_20px] bg-contain lg:bg-allobg bg-allooriginal -mt-20  h-[95vh] lg:h-[90vh] md:h-[85vh] ">
         {isLoading && (
           <div className="flex flex-col-reverse text-center md:h-96 text-xl">
             Chargement en cours ...
@@ -133,7 +133,7 @@ export default function AlloPage() {
                 </div>
               </div>
               <div
-                className="flex flex-col md:justify-start text-center lg:text-start gap-10 w-full lg:px-[10%] lg:border-x-2 lg:border-gblue "
+                className="flex flex-col md:justify-start text-center lg:text-start gap-10 w-full md:px-[5%] compt:px-[10%] lg:border-x-2 lg:border-gblue "
                 id="text-content"
               >
                 <p>{firsttext && <PortableText value={firsttext} />}</p>
@@ -171,7 +171,7 @@ export default function AlloPage() {
       )}
       {/* Spotlight Mask */}
 
-      <div className="md:flex justify-center md:visible hidden ">
+      <div className="compt:flex justify-center compt:visible hidden ">
         <m.div
           className="absolute z-0 bg-allooriginal  lg:-mt-20  lg:bg-auto bg-[60px_60px] mask"
           animate={{
