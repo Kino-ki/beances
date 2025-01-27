@@ -3,6 +3,7 @@
 import { getQuoiPage } from "@/sanity/utils/getquoipage";
 import { QuoiPageTypes } from "@/types/quoipageTypes";
 import Image from "next/image";
+import nextbook from "@/public/images/bookpicture.png";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import "@/app/MaskStyles.css";
@@ -63,15 +64,31 @@ export default function QuoiPage() {
                     onMouseEnter={() => setHoveredBook(book._id)}
                     onMouseLeave={() => setHoveredBook(null)}
                   >
-                    <div className="overflow-hidden h-full">
-                      <Image
-                        src={book.bookimage}
-                        width={200}
-                        height={80}
-                        alt={book.slug}
-                        className={` ${hoveredBook === book._id && `scale-105 transition-transform duration-500 ease-in-out`} shadow-xl w-auto md:w-64  `}
-                      />{" "}
-                    </div>
+                    {book.bookimage ? (
+                      <div className="overflow-hidden h-full">
+                        <Image
+                          src={book.bookimage}
+                          width={200}
+                          height={80}
+                          alt={book.slug}
+                          className={`shadow-xl w-auto md:w-64 ${
+                            hoveredBook === book._id
+                              ? "scale-105 transition-transform duration-500 ease-in-out"
+                              : ""
+                          }`}
+                        />
+                      </div>
+                    ) : (
+                      <div className="overflow-hidden h-full">
+                        <Image
+                          src={nextbook}
+                          width={200}
+                          height={80}
+                          alt="next book"
+                          className={`shadow-xl w-auto md:w-64`}
+                        />
+                      </div>
+                    )}
                     <div className="flex flex-col md:mt-5 mb-3 text-center  md:w-[15rem]">
                       <h2 className=" flex justify-center text-lg md:text-xl font-gillbold ">
                         {book.title}{" "}
