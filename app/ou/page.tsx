@@ -61,12 +61,12 @@ export default function OuPage() {
         )}
         {ouData && (
           <div className="flex flex-col lg:flex-row lg:justify-between ">
-            <div className="flex flex-col lg:justify-start justify-center text-center lg:text-start md:mx-auto md:gap-12 ">
+            <div className="flex flex-col lg:justify-start justify-center text-center lg:text-start md:mx-auto md:gap-8 ">
               <h1 className="font-burnout md:text-[4rem] text-[3rem] leading-tight my-5 lg:ml-20 text-jaune tracking-wide mx-auto  md:my-0 ">
                 {name}
               </h1>
 
-              <div className="flex flex-col justify-start text-center lg:text-start md:gap-10 gap-5 mx-8  lg:ml-28 lg:w-[35vw]">
+              <div className="flex flex-col justify-start text-center lg:text-start md:gap-5 gap-5 mx-8  lg:ml-28 lg:w-[35vw]">
                 <h2 className="font-cyberpunk md:text-lg">{paperdiffusion} </h2>
                 <p className="text-md">
                   {paperdescription && (

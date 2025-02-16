@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const components: PortableTextComponents = {
   marks: {
     purple: ({ children }) => (
-      <span style={{ color: "rgba(209, 99, 136, 1)" }}>{children}</span>
+      <span style={{ color: "rgba(179, 126, 174, 1)" }}>{children}</span>
     ),
     pink: ({ children }) => (
       <span style={{ color: "rgba(233, 70, 124, 1)" }}>{children}</span>

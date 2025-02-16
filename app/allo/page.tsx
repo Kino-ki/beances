@@ -3,7 +3,6 @@ import { getAlloPage } from "@/sanity/utils/getallopage";
 import { AlloPageTypes } from "@/types/allopageTypes";
 import { PortableText, PortableTextComponents } from "next-sanity";
 import { useEffect, useState } from "react";
-import fblogo from "@/public/images/logofb.png";
 import instalogo from "@/public/images/logoinsta.png";
 import Image from "next/image";
 import triangle from "@/public/images/redpoly.png";
@@ -17,7 +16,7 @@ import Link from "next/link";
 const components: PortableTextComponents = {
   marks: {
     purple: ({ children }) => (
-      <span style={{ color: "rgba(209, 99, 136, 1)" }}>{children}</span>
+      <span style={{ color: "rgba(179, 126, 174, 1)" }}>{children}</span>
     ),
     pink: ({ children }) => (
       <span style={{ color: "rgba(233, 70, 124, 1)" }}>{children}</span>
@@ -112,23 +111,18 @@ export default function AlloPage() {
                 <p>Découvre nos réseaux !</p>
                 <div className="flex md:flex-col flex-row gap-10 ">
                   <div className="my-auto">
-                    <Image
-                      src={fblogo}
-                      width={52}
-                      height={10}
-                      alt="logo facebook"
-                      className="hover:scale-110 transition-all ease-in-out mx-auto"
-                    />
-                  </div>
-
-                  <div className="my-auto">
-                    <Image
-                      src={instalogo}
-                      width={60}
-                      height={10}
-                      alt="logo instagram"
-                      className="hover:scale-110 transition-all ease-in-out"
-                    />
+                    <Link
+                      target="_blank"
+                      href={"https://www.instagram.com/beances.editions/"}
+                    >
+                      <Image
+                        src={instalogo}
+                        width={60}
+                        height={10}
+                        alt="logo instagram"
+                        className="hover:scale-110 transition-all ease-in-out"
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>
