@@ -4,10 +4,13 @@ import NavBar from "../components/NavBar";
 import BurgerMenu from "../components/BurgerMenu";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import NewsletterModal from "@/components/NewsletterModal";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Béances éditions",
-  description: "Béances éditions",
+  title: "Béances éditions | Maison d'édition indépendante queer  ",
+  description:
+    "Béances Éditions, maison d’édition indépendante, queer et féministe, publie des voix lesbo-queer, lesbiennes et trans pour faire résonner des récits engagés.",
   icons: {
     icon: "/images/icon.png",
   },
@@ -28,7 +31,15 @@ export default function RootLayout({
           <NavBar />
           <BurgerMenu />
         </header>
-        <main className="absoltute">{children}</main>
+        <main className="absoltute">
+          <div className="z-50 fixed bottom-1 md:bottom-10 md:left-5 w-full md:w-[60%] lg:w-[30%] ">
+            <NewsletterModal />
+          </div>
+          {children}
+          <Analytics />
+
+          <div className="fixed top-50"></div>
+        </main>
         <footer className=" ">
           <Footer />
         </footer>

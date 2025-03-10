@@ -16,7 +16,6 @@ export default function BookPage({ params }: Props) {
   useEffect(() => {
     const fetchData = async () => {
       const slug = params.book;
-      console.log(slug);
       try {
         const data = await getBook(slug);
         setBookData(data);
@@ -29,7 +28,6 @@ export default function BookPage({ params }: Props) {
     };
     fetchData();
   }, [params.book]);
-  console.log(bookData);
 
   const {
     title,

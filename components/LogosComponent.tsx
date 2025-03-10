@@ -24,8 +24,6 @@ export function LogosComponent() {
     fetchData();
   }, []);
 
-  console.log(logosData);
-
   return (
     <div className="grid grid-cols-3 gap-8 lg:p-4">
       {logosData &&

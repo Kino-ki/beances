@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import instalogo from "@/public/images/logoinsta.png";
 import Image from "next/image";
 import triangle from "@/public/images/redpoly.png";
-import diphtong from "@/public/images/diphtonglogo.png";
+import diphtong from "@/public/images/diphtonglogo.svg";
 import toast from "react-hot-toast";
 import "@/app/MaskStyles.css";
 import { motion as m } from "framer-motion";
@@ -147,16 +147,22 @@ export default function AlloPage() {
                   )}{" "}
                 </p>
                 <div className="flex justify-center mt-12">
-                  <p className="my-auto mt-2 mr-2 ">Développement web</p>
-                  <div>
-                    <Image
-                      src={diphtong}
-                      width={30}
-                      height={30}
-                      alt="diphtong logo"
-                    />
+                  <div className="flex ">
+                    <p className="my-auto mr-2 text-end text-sm h-full ">
+                      <span className="font-semibold"> Développement:</span>
+                      <br />
+                      agence web
+                    </p>
+                    <div>
+                      <Image
+                        src={diphtong}
+                        width={35}
+                        height={30}
+                        alt="diphtong logo"
+                      />
+                    </div>
                   </div>
-                  <p className="mt-11 md:ml-2 ml-1 text-sm">studio</p>
+                  <p className="mt-11 md:ml-2 ml-1 text-sm"></p>
                 </div>
               </div>
             </div>

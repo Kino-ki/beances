@@ -32,6 +32,7 @@ const config: Config = {
         clearbg: "url(/images/clearbg.png) ",
         burgerbg: "url(/images/burger-bg.png) ",
         summarybg: "url(/images/doublepaper.png) ",
+        oppabg: "url(/images/opapaper.svg) ",
       },
     },
     fontFamily: {
