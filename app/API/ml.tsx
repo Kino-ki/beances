@@ -24,7 +24,7 @@ export async function subscribeUser(email: string) {
       return { error: mlData.message };
     }
 
-    return { success: "Merci pour votre inscription à notre newsletter !" };
+    return { success: "Merci pour votre inscription!" };
   } catch (error) {
     console.error("Error in subscription:", error);
     return { error: "Internal server error" };

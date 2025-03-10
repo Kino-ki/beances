@@ -22,34 +22,41 @@ export default function NewsletterInput() {
     }
   };
   return (
-    <div className="flex gap-2 text-sm md:flex-row md:justify-center justify-between flex-col">
-      <div className="flex justify-center lg:justify-end">
-        <p className="lg:w-[60%] py-3 flex">Rejoins notre infolettre!</p>
-      </div>
-      <form
-        onSubmit={handleSubmit}
-        action=""
-        className="flex justify-between  mx-5 gap-2 border-b border-black"
-      >
-        {errorMessage && <p className="error">{errorMessage}</p>}
-        {successMessage && <p className="success">{successMessage}</p>}
-        <input
-          className="  outline-none p-1 md:w-60 bg-transparent"
-          type="email"
-          name="email"
-          placeholder="Email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <button
-          className=" p-1 px-2 rounded-sm text-sm focus:font-semibold transition-all ease-in-out "
-          type="submit"
-        >
-          M&lsquo;inscrire
-        </button>
-      </form>
+    <div className="flex gap-2 text-sm md:flex-row md:justify-center justify-between flex-col ">
+      {errorMessage && <p className="error">{errorMessage}</p>}
+      {successMessage && <p className="success">{successMessage}</p>}
+
+      {!errorMessage && !successMessage && (
+        <div className="flex gap-2 text-sm md:flex-row md:justify-center justify-between flex-col ">
+          <div className="flex justify-center lg:justify-end">
+            <p className="lg:w-[60%] md:py-0 py-3 flex md:text-sm">
+              Rejoins notre infolettre!
+            </p>
+          </div>
+          <form
+            onSubmit={handleSubmit}
+            action=""
+            className="flex justify-between  mx-5 gap-2 border-b border-black"
+          >
+            <input
+              className="  outline-none p-1 md:w-60 bg-transparent "
+              type="email"
+              name="email"
+              placeholder="Email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button
+              className=" p-1 px-2 rounded-sm text-sm hover:font-semibold transition-all ease-in-out "
+              type="submit"
+            >
+              M&lsquo;inscrire
+            </button>
+          </form>
+        </div>
+      )}
     </div>
   );
 }

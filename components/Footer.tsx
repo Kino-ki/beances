@@ -28,7 +28,7 @@ export default function Footer() {
     <div className=" backdrop-blur-sm text-sm md:text-base">
       {!pathname.includes("admin") && (
         <div className="flex flex-col">
-          <div className="lg:hidden border-t md:border-t-1 border-black py-5 pb-8 flex justify-center">
+          <div className="lg:hidden border-t md:border-t-1 border-black py-5 h-fit pb-8 flex justify-center">
             <NewsletterInput />
           </div>
 
