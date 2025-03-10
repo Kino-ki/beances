@@ -42,7 +42,7 @@ export default function NewsletterInput() {
               className="  outline-none p-1 md:w-60 bg-transparent "
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Courriel"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

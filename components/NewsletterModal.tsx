@@ -60,7 +60,7 @@ export default function NewsletterModal() {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Email"
+                placeholder="Courriel"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
