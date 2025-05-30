@@ -40,6 +40,7 @@ const config: Config = {
       cyberpunk: ["cyberpunk"],
       burnout: ["burnout"],
       gillbold: ["gillbold"],
+      punktypo: ["punktype"],
     },
   },
   plugins: [],

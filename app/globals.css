@@ -22,6 +22,10 @@
     font-family: "gillbold";
     src: url("/fonts/gillSansUltraBold.ttf");
   }
+  @font-face {
+    font-family: "punktype";
+    src: url("/fonts/Punktype.ttf");
+  }
 }
 
 @layer utilities {

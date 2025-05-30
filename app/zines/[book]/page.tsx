@@ -46,15 +46,17 @@ export default function BookPage({ params }: Props) {
         {error && <div> {error} </div>}
         {bookData && (
           <div className="flex lg:flex-row flex-col justify-between h-full   ">
-            <div className="flex flex-col justify-start mt-5 md:mt-10 md:ml-24 gap-5 mb-5 lg:w-[50%]">
-              <h1 className="font-burnout md:text-6xl  text-center md:text-start text-5xl  ">
+            <div className="flex flex-col justify-start mt-5 md:mt-10 md:ml-24 gap-2  mb-5 lg:w-[50%]">
+              <h1 className="font-punktypo  md:text-[3.25rem] text-center md:text-start text-4xl  ">
                 {title}{" "}
-                <p className="md:text-2xl text-xl font-sourcecode ">{author}</p>
               </h1>
-              <div className=" md:text-lg mt-2 px-3 md:px-0">({year}) </div>
-              <div className="md:text-lg tracking-tighter px-3 md:px-0">
-                Traducteurice:{" "}
-                <span className="font-medium "> {translator} </span>{" "}
+              <div className="flex flex-col justify-start px-3">
+                <p className="md:text-2xl text-lg font-sourcecode ">{author}</p>
+                <div className=" md:text-lg text-sm  lg:px-1">({year}) </div>
+                <div className="md:text-lg tracking-tighter">
+                  Traducteurice:{" "}
+                  <span className="font-medium "> {translator} </span>{" "}
+                </div>
               </div>
               <div className="flex justify-center lg:hidden ">
                 {bookimage && (
