@@ -22,8 +22,8 @@ export default function QuoiLayout({ quoiData }: QuoiLayoutProps) {
   const size = isClicked ? 600 : isHovered ? 400 : 150;
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="  compt:bg-zinebg lg:bg-fixed compt:bg-right-bottom bg-contain bg-fixed compt:bg-no-repeat bg-clearbg bg-right-top">
+    <div className="flex flex-col ">
+      <div className="  compt:bg-zinebg lg:bg-fixed compt:bg-right-bottom bg-contain bg-fixed compt:bg-no-repeat bg-clearbg bg-right-top  ">
         <h1 className="flex justify-center lg:justify-start font-burnout md:text-[5rem] text-center text-[4rem] mt-5 px-20 lg:px-0 leading-tight md:my-10 text-violetta md:ml-[5%] md:tracking-wider">
           NOS LIVRES
         </h1>
@@ -76,7 +76,7 @@ export default function QuoiLayout({ quoiData }: QuoiLayoutProps) {
           </div>
         </div>
       </div>
-      <div className="lg:visible lg:flex hidden">
+      <div className="lg:visible lg:flex hidden ">
         <m.div
           className="absolute z- bg-alu bg-fixed bg-contain bg-right-bottom bg-no-repeat mask"
           animate={{
