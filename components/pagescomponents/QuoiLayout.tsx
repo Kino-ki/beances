@@ -29,7 +29,7 @@ export default function QuoiLayout({ quoiData }: QuoiLayoutProps) {
         </h1>
         <div>
           <div className="  mt-10 flex flex-col justify-center rounded-md">
-            <div className="flex lg:flex-row lg:flex-wrap flex-col lg:pt-10 lg:gap-[7rem] md:gap-12  gap-16 justify-start lg:items-start px-10 mb-10 md:ml-[4%] ">
+            <div className="flex lg:flex-row lg:flex-wrap flex-col 2xl:pt-5 lg:gap-12 2xl:gap-[7rem] md:gap-12  gap-16 justify-start lg:items-start px-10 mb-10 md:ml-[4%] ">
               {quoiData &&
                 quoiData.toReversed().map((book) => (
                   <Link
@@ -80,7 +80,7 @@ export default function QuoiLayout({ quoiData }: QuoiLayoutProps) {
         <m.div
           className="absolute z- bg-alu bg-fixed bg-contain bg-right-bottom bg-no-repeat mask"
           animate={{
-            WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
+            WebkitMaskPosition: `${x - size / 2}px ${y + 50 - size / 2}px`,
             opacity: 1,
             WebkitMaskSize: `${size}px`,
           }}

@@ -2,7 +2,7 @@
 
 import { OuPageTypes } from "@/types/oupageTypes";
 import { PortableText } from "next-sanity";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "@/app/MaskStyles.css";
 import useMousePosition from "@/components/useMousePosition";
 import { motion as m } from "framer-motion";
@@ -16,10 +16,20 @@ type OuLayoutProps = {
 export default function OuLayout({ ouData }: OuLayoutProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [localX, setLocalX] = useState(0);
+  const [localY, setLocalY] = useState(0);
+  const maskRef = useRef<HTMLDivElement>(null);
 
   const { x, y } = useMousePosition();
 
   const size = isClicked ? 600 : isHovered ? 400 : 0;
+
+  useEffect(() => {
+    if (!maskRef.current) return;
+    const rect = maskRef.current.getBoundingClientRect();
+    setLocalX(x - rect.left);
+    setLocalY(y - rect.top);
+  }, [x, y]);
 
   const {
     name,
@@ -42,11 +52,11 @@ export default function OuLayout({ ouData }: OuLayoutProps) {
 
               <div className="flex flex-col justify-start text-center lg:text-start md:gap-5 gap-5 mx-8  lg:ml-28 lg:w-[35vw]">
                 <h2 className="font-cyberpunk md:text-lg">{paperdiffusion} </h2>
-                <p className="text-md">
+                <div className="text-md">
                   {paperdescription && (
                     <PortableText value={paperdescription} />
                   )}
-                </p>
+                </div>
                 <Image
                   src={background}
                   width={350}
@@ -55,9 +65,9 @@ export default function OuLayout({ ouData }: OuLayoutProps) {
                   className="items-center mx-auto visible md:hidden"
                 />
                 <h2 className="font-cyberpunk md:text-lg"> {webdiffusion} </h2>
-                <p className="text-md">
+                <div className="text-md">
                   {webdescription && <PortableText value={webdescription} />}
-                </p>
+                </div>
               </div>
             </div>
             <div className="relative md:h-[50vh] lg:h-[60vh] w-full ">
@@ -67,9 +77,10 @@ export default function OuLayout({ ouData }: OuLayoutProps) {
               {/* Spotlight Mask */}
               <div className="compt:flex justify-between compt:visible hidden w-full ">
                 <m.div
+                  ref={maskRef}
                   className="absolute z-0 top-0 left-1 bg-contain bg-ouoriginal bg-center my-auto bg-no-repeat mask  "
                   animate={{
-                    WebkitMaskPosition: `${x - 2.5 * size}px ${y - size / 1.5}px`,
+                    WebkitMaskPosition: `${localX - size / 2}px ${localY + 60 - size / 2}px`,
                     opacity: 1,
                     WebkitMaskSize: `${size}px`,
                   }}

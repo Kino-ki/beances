@@ -33,23 +33,25 @@ export default function HomeLayout({ homeData }: HomedataProps) {
   const { text } = homeData[0];
 
   return (
-    <div className=" flex flex-col justify-end">
+    <div className=" flex flex-col justify-end ">
       {/* Static Background  */}
 
-      <div className="h-[95vh] lg:min-h-[92vh] bg-quioriginal lg:bg-quibg bg-center bg-fixed md:bg-scroll compt:bg-fixed bg-contain  bg-no-repeat -mt-16"></div>
+      <div className="h-[95vh] lg:min-h-[92vh] bg-quioriginal lg:bg-quibg bg-center bg-fixed md:bg-scroll compt:bg-fixed bg-contain  bg-no-repeat -mt-16 relative">
+        <Link
+          href="#text"
+          className=" w-fit mx-auto absolute bottom-5 right-[50%] z-50"
+        >
+          <Image
+            src={triangle}
+            width={60}
+            height={10}
+            alt="triangle"
+            className=""
+          />
+        </Link>
+      </div>
       {text && (
-        <div className="z-10 bg-paperbg md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] border-t border-pinku">
-          <Link href="#text">
-            <div className="flex justify-center -mt-24  ">
-              <Image
-                src={triangle}
-                width={60}
-                height={10}
-                alt="triangle"
-                className="z-10"
-              />
-            </div>
-          </Link>
+        <div className="z-50 bg-paperbg md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] border-t border-pinku ">
           <div
             className="md:mx-32 mx-4 my-20 md:text-2xl text-md font-sourcecode leading-7 text-pretty tracking-wide "
             id="text"
@@ -64,7 +66,7 @@ export default function HomeLayout({ homeData }: HomedataProps) {
         <m.div
           className="absolute z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed md:bg-scroll compt:bg-fixed bg-contain bg-center bg-no-repeat mask"
           animate={{
-            WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
+            WebkitMaskPosition: `${x - size / 2}px ${y + 100 - size / 2}px`,
             opacity: 1,
             WebkitMaskSize: `${size}px`,
           }}
