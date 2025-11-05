@@ -1,6 +1,6 @@
 "use client";
 import { subscribeUser } from "@/app/API/ml";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cross from "@/public/images/crossicon.png";
 import Image from "next/image";
 
@@ -9,16 +9,31 @@ export default function NewsletterModal() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [buttonclosed, setButtonClosed] = useState(false);
+  const [isTimeout, setIsTimeout] = useState<boolean>(false);
+
+  const STORAGE_KEY = "newsletterDismissed";
+
+  useEffect(() => {
+    const sessiondismissed = sessionStorage.getItem(STORAGE_KEY);
+    const localdismissed = localStorage.getItem(STORAGE_KEY);
+    if (!sessiondismissed && !localdismissed) {
+      const timer = setTimeout(() => {
+        setIsTimeout(true);
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const handlebutton = () => {
     setButtonClosed(true);
+    sessionStorage.setItem(STORAGE_KEY, "true");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
     setSuccessMessage("");
-
+    localStorage.setItem(STORAGE_KEY, "true");
     const result = await subscribeUser(email);
 
     if (result.error) {
@@ -31,7 +46,7 @@ export default function NewsletterModal() {
   };
   return (
     <div>
-      {!buttonclosed && (
+      {!buttonclosed && isTimeout && (
         <div className="bg-oppabg bg-cover py-5 px-9 z-50 relative shadow-lg flex flex-col gap-3">
           {" "}
           <div className=" flex justify-between text-sm">

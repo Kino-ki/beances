@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import NewsletterModal from "@/components/NewsletterModal";
 import { Analytics } from "@vercel/analytics/react";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Béances éditions | Maison d'édition indépendante queer  ",
@@ -35,7 +37,7 @@ export default function RootLayout({
           <div className="z-50 fixed bottom-1 md:bottom-10 md:left-5 w-full md:w-[60%] lg:w-[30%] ">
             <NewsletterModal />
           </div>
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <Analytics />
 
           <div className="fixed top-50"></div>

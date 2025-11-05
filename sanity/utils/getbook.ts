@@ -4,7 +4,7 @@ import { BookPageTypes } from "@/types/bookpageTypes";
 
 const client = createClient(config);
 
-export async function getBook(slug: string) : Promise<BookPageTypes> {
+export async function getBook(slug: string): Promise<BookPageTypes> {
   const res = await client.fetch(
     groq`*[_type == "quoi" && slug.current == $slug][0] {
         _id,
@@ -13,7 +13,6 @@ export async function getBook(slug: string) : Promise<BookPageTypes> {
            "slug": slug.current,
            author,
            translator,
-           year,
            "bookimage" : bookimage.asset -> url,
            "authorimage" : authorimage.asset -> url,
            summary,
