@@ -104,7 +104,7 @@ export default function AlloLayout({ alloData }: AlloLayoutProps) {
                 className="flex flex-col md:justify-start text-center lg:text-start gap-10 w-full md:px-[5%] compt:px-[10%] lg:border-x-2 lg:border-gblue "
                 id="text-content"
               >
-                <p>{firsttext && <PortableText value={firsttext} />}</p>
+                {firsttext && <PortableText value={firsttext} />}
 
                 <p
                   onClick={ClipboardCopy}
@@ -115,11 +115,9 @@ export default function AlloLayout({ alloData }: AlloLayoutProps) {
               </div>
 
               <div className="flex flex-col text-center w-full justify-evenly ">
-                <p>
-                  {secondtext && (
-                    <PortableText value={secondtext} components={components} />
-                  )}{" "}
-                </p>
+                {secondtext && (
+                  <PortableText value={secondtext} components={components} />
+                )}{" "}
                 <div className="flex justify-center mt-12">
                   <div className="flex ">
                     <p className="my-auto mr-2 text-end text-sm h-full ">
@@ -127,14 +125,15 @@ export default function AlloLayout({ alloData }: AlloLayoutProps) {
                       <br />
                       agence web
                     </p>
-                    <div>
+                    <a href="https://www.diphtong.ca/home" target="_blank">
                       <Image
                         src={diphtong}
                         width={35}
                         height={30}
                         alt="diphtong logo"
+                        className="hover:scale-110 transition-all ease-in-out "
                       />
-                    </div>
+                    </a>
                   </div>
                   <p className="mt-11 md:ml-2 ml-1 text-sm"></p>
                 </div>
