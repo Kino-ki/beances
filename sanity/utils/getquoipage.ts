@@ -12,10 +12,7 @@ export async function getQuoiPage(): Promise<QuoiPageTypes[]> {
           title,
            "slug": slug.current,
            author,
-           translator,
-           year,
            "bookimage" : bookimage.asset -> url,
-           "authorimage" : authorimage.asset -> url,
         } `
   );
   return res;

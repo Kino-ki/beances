@@ -29,11 +29,6 @@ export const quoiSchema = defineType({
       type: "string",
     },
     {
-      name: "year",
-      title: "Année de publication",
-      type: "string",
-    },
-    {
       name: "bookimage",
       title: "Image de Couverture",
       type: "image",
