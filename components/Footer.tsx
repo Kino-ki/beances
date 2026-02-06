@@ -65,12 +65,13 @@ export default function Footer() {
                 />
               </div>
               <div className=" flex flex-col justify-center ">
-                <p
+                <button
                   onClick={ClipboardCopy}
-                  className="font-sourcecode hidden md:visible md:flex underline hover:font-semibold transition-all ease-in-out"
+                  data-tooltip="click to copy"
+                  className="font-sourcecode hidden md:visible md:flex underline hover:font-semibold transition-all ease-in-out cursor-pointer"
                 >
                   beances.editions@protonmail.com
-                </p>
+                </button>
               </div>
               <div className="lg:flex hidden ">
                 <NewsletterInput />
