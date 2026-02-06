@@ -8,7 +8,7 @@ import NewsletterModal from "@/components/NewsletterModal";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Béances éditions | Maison d'édition indépendante queer  ",
+  title: "Béances éditions, microédition transbigouine",
   description:
     "Béances Éditions, maison d’édition indépendante, queer et féministe, publie des voix lesbo-queer, lesbiennes et trans pour faire résonner des récits engagés.",
   icons: {
