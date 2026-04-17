@@ -2,10 +2,7 @@
 
 import { OuPageTypes } from "@/types/oupageTypes";
 import { PortableText } from "next-sanity";
-import { useEffect, useRef, useState } from "react";
-import "@/app/MaskStyles.css";
-import useMousePosition from "@/components/useMousePosition";
-import { motion as m } from "framer-motion";
+import SpotlightMask from "@/components/SpotlightMask";
 import background from "@/public/images/ou-original.png";
 import Image from "next/image";
 
@@ -14,23 +11,6 @@ type OuLayoutProps = {
 };
 
 export default function OuLayout({ ouData }: OuLayoutProps) {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-  const [localX, setLocalX] = useState(0);
-  const [localY, setLocalY] = useState(0);
-  const maskRef = useRef<HTMLDivElement>(null);
-
-  const { x, y } = useMousePosition();
-
-  const size = isClicked ? 600 : isHovered ? 400 : 0;
-
-  useEffect(() => {
-    if (!maskRef.current) return;
-    const rect = maskRef.current.getBoundingClientRect();
-    setLocalX(x - rect.left);
-    setLocalY(y - rect.top);
-  }, [x, y]);
-
   const {
     name,
     paperdiffusion,
@@ -74,23 +54,12 @@ export default function OuLayout({ ouData }: OuLayoutProps) {
               <div className=" lg:bg-oubg md:bg-ouoriginal h-full w-full bg-contain lg:my-auto  md:bg-center md:bg-no-repeat">
                 {" "}
               </div>
-              {/* Spotlight Mask */}
-              <div className="compt:flex justify-between compt:visible hidden w-full ">
-                <m.div
-                  ref={maskRef}
-                  className="absolute z-0 top-0 left-1 bg-contain bg-ouoriginal bg-center my-auto bg-no-repeat mask  "
-                  animate={{
-                    WebkitMaskPosition: `${localX - size / 2}px ${localY + 60 - size / 2}px`,
-                    opacity: 1,
-                    WebkitMaskSize: `${size}px`,
-                  }}
-                  transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  onMouseDown={() => setIsClicked(true)}
-                  onMouseUp={() => setIsClicked(false)}
-                ></m.div>
-              </div>
+              <SpotlightMask
+                wrapperClassName="compt:flex justify-between compt:visible hidden w-full"
+                className="z-0 top-0 left-1 bg-contain bg-ouoriginal bg-center my-auto bg-no-repeat"
+                yOffset={60}
+                useLocalCoords={true}
+              />
             </div>
           </div>
         )}

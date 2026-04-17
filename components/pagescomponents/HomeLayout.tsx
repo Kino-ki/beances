@@ -1,13 +1,10 @@
 "use client";
 // import { getHomePage } from "@/sanity/utils/gethomepage";
 import { HomePageTypes } from "@/types/homepageTypes";
-import { useState } from "react";
 import triangle from "@/public/images/Polygon.png";
 import Image from "next/image";
 import { PortableText, PortableTextComponents } from "next-sanity";
-import "@/app/MaskStyles.css";
-import { motion as m } from "framer-motion";
-import useMousePosition from "@/components/useMousePosition";
+import SpotlightMask from "@/components/SpotlightMask";
 import Link from "next/link";
 
 const components: PortableTextComponents = {
@@ -23,13 +20,6 @@ const components: PortableTextComponents = {
 type HomedataProps = { homeData: HomePageTypes[] };
 
 export default function HomeLayout({ homeData }: HomedataProps) {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-
-  const { x, y } = useMousePosition();
-
-  const size = isClicked ? 600 : isHovered ? 400 : 0;
-
   const { text } = homeData[0];
 
   return (
@@ -61,22 +51,10 @@ export default function HomeLayout({ homeData }: HomedataProps) {
         </div>
       )}
 
-      {/* Spotlight Mask */}
-      <div className="compt:flex compt:visible hidden ">
-        <m.div
-          className="absolute z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed md:bg-scroll compt:bg-fixed bg-contain bg-center bg-no-repeat mask"
-          animate={{
-            WebkitMaskPosition: `${x - size / 2}px ${y + 100 - size / 2}px`,
-            opacity: 1,
-            WebkitMaskSize: `${size}px`,
-          }}
-          transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onMouseDown={() => setIsClicked(true)}
-          onMouseUp={() => setIsClicked(false)}
-        ></m.div>
-      </div>
+      <SpotlightMask
+        className="z-0 top-0 left-0 -mt-16 bg-quioriginal bg-fixed md:bg-scroll compt:bg-fixed bg-contain bg-center bg-no-repeat"
+        yOffset={100}
+      />
     </div>
   );
 }

@@ -6,21 +6,12 @@ import Image from "next/image";
 import nextbook from "@/public/images/bookpicture.png";
 import Link from "next/link";
 import { useState } from "react";
-import "@/app/MaskStyles.css";
-import useMousePosition from "@/components/useMousePosition";
-import { motion as m } from "framer-motion";
+import SpotlightMask from "@/components/SpotlightMask";
 
 type QuoiLayoutProps = { quoiData: QuoiPageTypes[] };
 
 export default function QuoiLayout({ quoiData }: QuoiLayoutProps) {
   const [hoveredBook, setHoveredBook] = useState<string | null>(null);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-
-  const { x, y } = useMousePosition();
-
-  const size = isClicked ? 600 : isHovered ? 400 : 150;
-
   return (
     <div className="flex flex-col ">
       <div className="  compt:bg-zinebg lg:bg-fixed compt:bg-right-bottom bg-contain bg-fixed compt:bg-no-repeat bg-clearbg bg-right-top  ">
@@ -76,21 +67,12 @@ export default function QuoiLayout({ quoiData }: QuoiLayoutProps) {
           </div>
         </div>
       </div>
-      <div className="lg:visible lg:flex hidden ">
-        <m.div
-          className="absolute z- bg-alu bg-fixed bg-contain bg-right-bottom bg-no-repeat mask"
-          animate={{
-            WebkitMaskPosition: `${x - size / 2}px ${y + 50 - size / 2}px`,
-            opacity: 1,
-            WebkitMaskSize: `${size}px`,
-          }}
-          transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onMouseDown={() => setIsClicked(true)}
-          onMouseUp={() => setIsClicked(false)}
-        ></m.div>
-      </div>
+      <SpotlightMask
+        wrapperClassName="lg:visible lg:flex hidden"
+        className="z-0 bg-alu bg-fixed bg-contain bg-right-bottom bg-no-repeat"
+        yOffset={50}
+        initialSize={150}
+      />
     </div>
   );
 }
