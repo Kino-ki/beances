@@ -1,7 +1,7 @@
 import { OuPageTypes } from "@/types/oupageTypes";
 import { PortableText } from "next-sanity";
 import SpotlightMask from "@/components/SpotlightMask";
-import background from "@/public/images/ou-original.png";
+import background from "@/public/images/ou-original.webp";
 import Image from "next/image";
 
 type OuLayoutProps = {
