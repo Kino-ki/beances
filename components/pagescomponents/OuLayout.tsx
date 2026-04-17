@@ -1,5 +1,3 @@
-"use client";
-
 import { OuPageTypes } from "@/types/oupageTypes";
 import { PortableText } from "next-sanity";
 import SpotlightMask from "@/components/SpotlightMask";

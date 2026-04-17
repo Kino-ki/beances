@@ -67,7 +67,7 @@ export default function Footer() {
               <div className=" flex flex-col justify-center ">
                 <p
                   onClick={ClipboardCopy}
-                  className="font-sourcecode hidden md:visible md:flex underline hover:font-semibold transition-all ease-in-out"
+                  className="font-sourcecode hidden md:visible md:flex underline hover:font-semibold transition-all ease-in-out cursor-pointer"
                 >
                   beances.editions@protonmail.com
                 </p>

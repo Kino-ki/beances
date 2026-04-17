@@ -1,4 +1,3 @@
-"use client";
 import { BookPageTypes } from "@/types/bookpageTypes";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
@@ -18,7 +17,7 @@ export default function ZinePageLayout({ bookData }: Props) {
     biography,
   } = bookData || {};
   return (
-    <div className=" md:min-h-[90vh]  compt:bg-zinegris bg-contain md:bg-right-bottom bg-fixed bg-clearbg bg-right-top md:bg-no-repeat pb-3 md:pb-0  md:mr-20 lg:mr-10 2xl:mr-20">
+    <div className="md:min-h-[90vh] compt:bg-zinegris bg-contain md:bg-right-bottom bg-scroll compt:bg-fixed bg-clearbg bg-right-top md:bg-no-repeat pb-3 md:pb-0 md:mr-20 lg:mr-10 2xl:mr-20">
       <div className="flex md:flex-col flex-row  justify-center">
         {bookData && (
           <div className="flex lg:flex-row flex-col justify-between h-full   ">

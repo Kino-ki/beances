@@ -14,7 +14,7 @@ export default function QuoiLayout({ quoiData }: QuoiLayoutProps) {
   const [hoveredBook, setHoveredBook] = useState<string | null>(null);
   return (
     <div className="flex flex-col ">
-      <div className="  compt:bg-zinebg lg:bg-fixed compt:bg-right-bottom bg-contain bg-fixed compt:bg-no-repeat bg-clearbg bg-right-top  ">
+      <div className="compt:bg-zinebg compt:bg-fixed compt:bg-right-bottom bg-contain compt:bg-no-repeat bg-clearbg bg-right-top">
         <h1 className="flex justify-center lg:justify-start font-burnout md:text-[5rem] text-center text-[4rem] mt-5 px-20 lg:px-0 leading-tight md:my-10 text-violetta md:ml-[5%] md:tracking-wider">
           NOS LIVRES
         </h1>

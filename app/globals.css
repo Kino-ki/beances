@@ -2,37 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: "Source Code Pro";
-    src: url("/fonts/SourceCodePro_VariableFont_wght.ttf");
-  }
-
-  @font-face {
-    font-family: "cyberpunk";
-    src: url("/fonts/Cybrpnuk2.ttf");
-  }
-
-  @font-face {
-    font-family: "burnout";
-    src: url("/fonts/Burnoutfadeaway.ttf");
-  }
-
-  @font-face {
-    font-family: "gillbold";
-    src: url("/fonts/gillSansUltraBold.ttf");
-  }
-  @font-face {
-    font-family: "punktype";
-    src: url("/fonts/Punktype.ttf");
-  }
-}
-
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     background-color: transparent;
     width: 10px;
-    /* transition: background-color 2s ease-in-out; */
   }
 
   .no-scrollbar:hover::-webkit-scrollbar-thumb {

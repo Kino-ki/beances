@@ -1,4 +1,3 @@
-"use client";
 // import { getHomePage } from "@/sanity/utils/gethomepage";
 import { HomePageTypes } from "@/types/homepageTypes";
 import triangle from "@/public/images/Polygon.png";
@@ -26,7 +25,7 @@ export default function HomeLayout({ homeData }: HomedataProps) {
     <div className=" flex flex-col justify-end ">
       {/* Static Background  */}
 
-      <div className="h-[95vh] lg:min-h-[92vh] bg-quioriginal lg:bg-quibg bg-center bg-fixed md:bg-scroll compt:bg-fixed bg-contain  bg-no-repeat -mt-16 relative">
+      <div className="h-[95vh] lg:min-h-[92vh] bg-quioriginal lg:bg-quibg bg-center bg-scroll compt:bg-fixed bg-contain bg-no-repeat -mt-16 relative">
         <Link
           href="#text"
           className=" w-fit mx-auto absolute bottom-5 right-[50%] z-50"

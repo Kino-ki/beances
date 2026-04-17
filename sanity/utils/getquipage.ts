@@ -4,14 +4,16 @@ import { QuiPageTypes } from "@/types/quipageTypes";
 
 const client = createClient(config);
 export async function getQuiPage(): Promise<QuiPageTypes[]> {
-  const res = client.fetch(
+  const res = await client.fetch(
     groq`*[_type == "qui"] {
           _id,
           _createdAt,
           title,
           "slug": slug.current,
           text
-          } `
+          } `,
+    {},
+    { next: { revalidate: 3600 } }
   );
   return res;
 }

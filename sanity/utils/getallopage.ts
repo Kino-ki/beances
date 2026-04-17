@@ -4,7 +4,7 @@ import { AlloPageTypes } from "@/types/allopageTypes";
 
 const client = createClient(config);
 export async function getAlloPage(): Promise<AlloPageTypes[]> {
-  const res = client.fetch(
+  const res = await client.fetch(
     groq`*[_type == "allo"] {
                     _id,
           _createdAt,
@@ -12,7 +12,9 @@ export async function getAlloPage(): Promise<AlloPageTypes[]> {
           slug,
           firsttext,
           secondtext,
-        } `
+        } `,
+    {},
+    { next: { revalidate: 3600 } }
   );
   return res;
 }

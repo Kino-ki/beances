@@ -18,7 +18,8 @@ export async function getBook(slug: string): Promise<BookPageTypes> {
            summary,
            biography
         } `,
-    { slug }
+    { slug },
+    { next: { revalidate: 3600 } }
   );
   return res;
 }

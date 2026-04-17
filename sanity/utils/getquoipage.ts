@@ -5,7 +5,7 @@ import { QuoiPageTypes } from "@/types/quoipageTypes";
 const client = createClient(config);
 
 export async function getQuoiPage(): Promise<QuoiPageTypes[]> {
-  const res = client.fetch(
+  const res = await client.fetch(
     groq`*[_type == "quoi"] {
                   _id,
           _createdAt,
@@ -13,7 +13,9 @@ export async function getQuoiPage(): Promise<QuoiPageTypes[]> {
            "slug": slug.current,
            author,
            "bookimage" : bookimage.asset -> url,
-        } `
+        } `,
+    {},
+    { next: { revalidate: 3600 } }
   );
   return res;
 }

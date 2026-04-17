@@ -1,4 +1,3 @@
-"use client";
 import { QuiPageTypes } from "@/types/quipageTypes";
 import { PortableText, PortableTextComponents } from "next-sanity";
 

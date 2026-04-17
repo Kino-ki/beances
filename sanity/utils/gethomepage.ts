@@ -4,14 +4,16 @@ import config from "../config/client-config";
 
 const client = createClient(config);
 export async function getHomePage(): Promise<HomePageTypes[]> {
-  const res = client.fetch(
+  const res = await client.fetch(
     groq`*[_type == "homepage"]{
         _id,
         _createdAt,
         title,
         "slug": slug.current,
         text
-        }`
+        }`,
+    {},
+    { next: { revalidate: 3600 } }
   );
   return res;
 }

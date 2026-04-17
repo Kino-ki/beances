@@ -1,6 +1,6 @@
 "use client";
 import menulogo from "@/public/images/burgermenu.png";
-import blogo from "@/public/images/logobe/logo.png";
+import blogo from "@/public/images/logobe/logo.webp";
 import cross from "@/public/images/cross.png";
 import Image from "next/image";
 import Link from "next/link";
