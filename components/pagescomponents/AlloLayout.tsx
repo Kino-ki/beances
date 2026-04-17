@@ -1,14 +1,11 @@
 "use client";
 import { PortableText, PortableTextComponents } from "next-sanity";
-import { useState } from "react";
 import instalogo from "@/public/images/logoinsta.png";
 import Image from "next/image";
 import triangle from "@/public/images/redpoly.png";
 import diphtong from "@/public/images/diphtonglogo.svg";
 import toast from "react-hot-toast";
-import "@/app/MaskStyles.css";
-import { motion as m } from "framer-motion";
-import useMousePosition from "@/components/useMousePosition";
+import SpotlightMask from "@/components/SpotlightMask";
 import Link from "next/link";
 import { AlloPageTypes } from "@/types/allopageTypes";
 
@@ -34,13 +31,6 @@ type AlloLayoutProps = {
 };
 
 export default function AlloLayout({ alloData }: AlloLayoutProps) {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-
-  const { x, y } = useMousePosition();
-
-  const size = isClicked ? 600 : isHovered ? 400 : 0;
-
   const ClipboardCopy = () => {
     navigator.clipboard
       .writeText("beances.editions@protonmail.com")
@@ -142,23 +132,10 @@ export default function AlloLayout({ alloData }: AlloLayoutProps) {
           </div>
         </div>
       )}
-      {/* Spotlight Mask */}
-
-      <div className="compt:flex justify-center compt:visible hidden ">
-        <m.div
-          className="absolute z-0 bg-allooriginal  lg:-mt-20  lg:bg-auto bg-[60px_60px] mask"
-          animate={{
-            WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
-            opacity: 1,
-            WebkitMaskSize: `${size}px`,
-          }}
-          transition={{ type: "tween", ease: "backOut", duration: 0.6 }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onMouseDown={() => setIsClicked(true)}
-          onMouseUp={() => setIsClicked(false)}
-        ></m.div>
-      </div>
+      <SpotlightMask
+        wrapperClassName="compt:flex justify-center compt:visible hidden"
+        className="z-0 bg-allooriginal lg:-mt-20 lg:bg-auto bg-[60px_60px]"
+      />
     </div>
   );
 }
