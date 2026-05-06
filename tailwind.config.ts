@@ -30,7 +30,7 @@ const config: Config = {
         alu: "url(/images/alu.webp) ",
         zinegris: "url(/images/zinegris.png) ",
         clearbg: "url(/images/clearbg.png) ",
-        burgerbg: "url(/images/burger-bg.png) ",
+        burgerbg: "url(/images/burger-bg.webp) ",
         summarybg: "url(/images/doublepaper.png) ",
         oppabg: "url(/images/opapaper.svg) ",
       },

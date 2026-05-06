@@ -4,9 +4,24 @@ import blogo from "@/public/images/logobe/logo.webp";
 import cross from "@/public/images/cross.png";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function BurgerMenu() {
   const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    if (!isClicked) return;
+
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, [isClicked]);
 
   const handleClick = () => {
     setIsClicked(false);
@@ -36,11 +51,16 @@ export default function BurgerMenu() {
           />
         </div>
         {isClicked && (
-          <div className=" absolute h-screen w-screen">
-            <div className="absolute right-2 top-1" onClick={handleClick}>
+          <div className="fixed inset-0 z-[1000] h-screen w-screen overflow-y-auto">
+            <button
+              type="button"
+              className="absolute right-2 top-1 z-10"
+              onClick={handleClick}
+              aria-label="Fermer le menu"
+            >
               <Image src={cross} width={90} height={100} alt="cross logo" />
-            </div>
-            <div className=" h-full w-full text-center p-12 font-cyberpunk bg-burgerbg ">
+            </button>
+            <div className=" h-full w-full text-center p-12 font-cyberpunk bg-burgerbg bg-cover ">
               <ul className=" flex flex-col justify-center gap-16 text-5xl text-gray-800  h-full">
                 <li
                   className={`transition-colors ease-in-out `}
@@ -68,7 +88,6 @@ export default function BurgerMenu() {
                 </li>
               </ul>
             </div>
-            this is the menu
           </div>
         )}
       </div>

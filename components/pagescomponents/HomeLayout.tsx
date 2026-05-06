@@ -25,11 +25,8 @@ export default function HomeLayout({ homeData }: HomedataProps) {
     <div className=" flex flex-col justify-end ">
       {/* Static Background  */}
 
-      <div className="h-[95vh] lg:min-h-[92vh] bg-quioriginal lg:bg-quibg bg-center bg-scroll compt:bg-fixed bg-contain bg-no-repeat -mt-16 relative">
-        <Link
-          href="#text"
-          className=" w-fit mx-auto absolute bottom-5 right-[50%] z-50"
-        >
+      <div className="h-[95vh] lg:min-h-[92vh] bg-quioriginal lg:bg-quibg bg-center bg-scroll compt:bg-fixed bg-contain bg-no-repeat -mt-16 relative flex flex-col justify-end items-center pb-4">
+        <Link href="#text" className=" w-fit  z-20 ">
           <Image
             src={triangle}
             width={60}
@@ -40,7 +37,7 @@ export default function HomeLayout({ homeData }: HomedataProps) {
         </Link>
       </div>
       {text && (
-        <div className="z-50 bg-paperbg md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] border-t border-pinku ">
+        <div className="z-20 bg-paperbg md:shadow-[1px_-5px_40px_3px_rgba(0,0,0,0.06)] border-t border-pinku ">
           <div
             className="md:mx-32 mx-4 my-20 md:text-2xl text-md font-sourcecode leading-7 text-pretty tracking-wide "
             id="text"

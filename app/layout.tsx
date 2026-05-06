@@ -70,7 +70,7 @@ export default function RootLayout({
           <BurgerMenu />
         </header>
         <main className="absoltute">
-          <div className="z-50 fixed bottom-1 md:bottom-10 md:left-5 w-full md:w-[60%] lg:w-[30%] ">
+          <div className="z-40 fixed bottom-1 md:bottom-10 md:left-5 w-full md:w-[60%] lg:w-[30%] ">
             <NewsletterModal />
           </div>
           <Suspense fallback={<Loading />}>{children}</Suspense>
